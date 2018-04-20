@@ -1,6 +1,6 @@
 
 <?php 
-	include ("bd/Conexao.class.php");
+	include("../bd/Conexao.class.php");
 	$conn= new Conexao();
 	
 	//$connect = mysqli_connect("localhost","root","","achados") or die("ERROR");
