@@ -6,9 +6,5 @@
 
 header{
 	color: #000;
-<<<<<<< HEAD
 	display:flex;
 }
-=======
-}
->>>>>>> testes
