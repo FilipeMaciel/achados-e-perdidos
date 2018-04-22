@@ -1,7 +1,9 @@
 
-<?php 
-	include("bd/Conexao.class.php");
-	$conn= new Conexao();
+<?php
+function __autoload($class_name){
+    require_once 'classes/'.$class_name.'.php';
+}
+	$conn= new DB();
 	//$conn=mysqli_connect("localhost","root","","achados") or die ("ERROR");
 		
 		if (isset($_POST["cadastrar"])) {

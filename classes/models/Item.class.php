@@ -1,34 +1,15 @@
 <?php 
-	include ("bd/Conexao.class.php");
+	include ("../Crud.php");
 
-	public class Item{
+	 class Item extends Crud {
 
+		private $id;
 
-		private $ids;
+		private $nome_item, $nome_pessoa, $local, $descricao, $data, $status, $imagem, $id_usuario;
 
-		private $nome_item;
-		private $nome_pessoa;
-		private $local;
-		private $descricao;
-		private $data;
-		private $status;
-		private $imagem;
-		private $id_usuario;
-		private $BANCO;
+		public function __construct($nome_item, $nome_pessoa, $local, $descricao, $data, $status, $imagem, $id_user){
 
-		function __construct(){
-			$BANCO=new Conexao();
-		}
+        }
 
-		public function find($id){
-			$query="SELECT * FROM intens WHERE id=:id";
-			
-			$prepare=$BANCO->prepare($query);
-			$prepare->bindValue(':id',$id,PDO::PARAM_STR);
-			$prepare->execute();	
-			$object=$prepare->fetchObject();
-
-		}
-
-	}
+     }
  ?>

@@ -1,5 +1,5 @@
 <?php
-require_once 'Crud.php';
+require_once '../Crud.php';
 class Usuario extends Crud{
     protected $table = 'usuarios';
     #Atributos da classe
