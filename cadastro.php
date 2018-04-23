@@ -1,9 +1,9 @@
 
 <?php
-function __autoload($class_name){
-    require_once 'classes/'.$class_name.'.php';
-}
+require_once "classes/models/Usuario.php";
+require_once "classes/DB.php";
 	$conn= new DB();
+
 	//$conn=mysqli_connect("localhost","root","","achados") or die ("ERROR");
 		
 		if (isset($_POST["cadastrar"])) {
@@ -12,7 +12,8 @@ function __autoload($class_name){
 			$senha=($_POST["senha"]);
 			$telefone=($_POST["telefone"]);
 			$tipo=($_POST["tipo"]);
-			
+
+
 			$query= "SELECT * FROM usuarios WHERE email=:email";
 			
 			$prepare= $conn->prepare($query);
@@ -24,18 +25,14 @@ function __autoload($class_name){
 			if($row != 0) {
 				echo "Dados incorretos...";
 			}else{
-				$insert=("INSERT INTO usuarios (nome, email, senha,telefone,tipo)VALUES(:nome,:email,:senha,:telefone,:tipo)");
+                #instancia a classe Usuarios e passa os parametros para o construtor
+                $user = new Usuario($nome, $email, $senha, $telefone, $tipo);
+				if($user->insert()){
+                    echo "Conta registrada, inicie sessão...";
+                }else{
+				    echo "Falha ao inserir dados";
+                }
 
-				$ist=$conn-> prepare($insert);
-				$ist->bindValue(':nome',$nome,PDO::PARAM_STR);
-				$ist->bindValue(':email',$email,PDO::PARAM_STR);
-				$ist->bindValue(':senha',$senha,PDO::PARAM_STR);
-				$ist->bindValue(':telefone',$telefone,PDO::PARAM_STR);
-				$ist->bindValue(':tipo',$tipo,PDO::PARAM_STR);
-				$ist->execute();
-
-
-				echo "Conta registrada, inicie sessão...";
 			}
 		}
 ?>

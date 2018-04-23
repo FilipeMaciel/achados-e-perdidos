@@ -1,5 +1,5 @@
 <?php
-require_once '../Crud.php';
+include  $_SERVER['DOCUMENT_ROOT'].'/achados-e-perdidos/classes/Crud.php';
 class Usuario extends Crud{
     protected $table = 'usuarios';
     #Atributos da classe
