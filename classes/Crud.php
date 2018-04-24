@@ -8,25 +8,23 @@ abstract class Crud extends DB{
 
     abstract  public function insert();
     abstract public function update($id);
+    abstract public function delete($id);
 
-    public function find($id){
-        $sql = "SELECT * FROM table WHERE id = :id";
+    /*****  Como estes métodos abaixo não precisam de dados específicos, eles podem ser generalizados para
+     * todas as classes que desejarem realizar o crud de informações
+     *******/
+    public static function find($id){
+        $sql = "SELECT * FROM usuarios WHERE id = :id";
         $prepare = DB::prepare($sql);
         $prepare->bindValue(':id', $id, PDO::PARAM_STR);
         $prepare->execute();
         return $prepare->fetch();
     }
-    public function findAll(){
+    public static function findAll(){
         $sql = "SELECT * FROM usuarios";
         $prepare = DB::prepare($sql);
         $prepare->execute();
         return $prepare->fetchAll();
-    }
-    public function delete($id){
-        $slq = "DELETE FROM $this->table WHERE id = :id";
-        $prepare = DB::prepare($slq);
-        $prepare->bindValue(':id', $id, PDO::PARAM_INT);
-        return $prepare->execute();
     }
 
 }

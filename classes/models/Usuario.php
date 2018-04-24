@@ -5,6 +5,8 @@ class Usuario extends Crud{
     #Atributos da classe
     private $nome, $email, $senha, $telefone, $tipo;
 
+
+    #construtor para atribuir valores aos atributos da classe
     public function __construct($nome, $email, $senha, $telefone, $tipo){
         $this->nome = $nome;
         $this->email = $email;
@@ -13,6 +15,7 @@ class Usuario extends Crud{
         $this->tipo = $tipo;
     }
 
+    #este método é abstrato na classe pai, logo é forçada a implementação do mesmo na classe filho
     public function insert(){
         try{
             $sql = "INSERT INTO $this->table (nome, email, senha, telefone, tipo) VALUES (:nome, :email, :senha, :telefone, :tipo)";
@@ -24,9 +27,11 @@ class Usuario extends Crud{
             $prepare->bindValue(':tipo', $this->tipo, PDO::PARAM_INT);
             return $prepare->execute();
         }catch (PDOException $e){
-            $e->getMessage();
+           return $e->getMessage();
         }
     }
+
+    #este método é abstrato na classe pai, logo é forçada a implementação do mesmo na classe filho
     public function update($id){
         $sql = "UPDATE $this->table SET nome = :nome, email = :email, senha = :senha, telefone = :telefone, tipo = :tipo WHERE id = :id ";
         $prepare = DB::prepare($sql);
@@ -37,7 +42,14 @@ class Usuario extends Crud{
         $prepare->bindValue(':tipo', $this->tipo, PDO::PARAM_INT);
         $prepare->bindValue(':id', $id, PDO::PARAM_INT);
         return $prepare->execute();
+    }
 
+    #este método é abstrato na classe pai, logo é forçada a implementação do mesmo na classe filho
+    public function delete($id){
+        $slq = "DELETE FROM $this->table WHERE id = :id";
+        $prepare = DB::prepare($slq);
+        $prepare->bindValue(':id', $id, PDO::PARAM_INT);
+        return $prepare->execute();
     }
 
 }

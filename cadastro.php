@@ -23,13 +23,16 @@ require_once "classes/DB.php";
 			$row= $prepare->rowCount();
 
 			if($row != 0) {
-				echo "Dados incorretos...";
+				echo "O email utilizados ja existe em nossa base de dados";
+				return false;
 			}else{
                 #instancia a classe Usuarios e passa os parametros para o construtor
                 $user = new Usuario($nome, $email, $senha, $telefone, $tipo);
-				if($user->insert()){
+
+				if($resp = $user->insert()){
                     echo "Conta registrada, inicie sessão...";
                 }else{
+				    var_dump($resp);
 				    echo "Falha ao inserir dados";
                 }
 

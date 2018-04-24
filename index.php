@@ -1,9 +1,9 @@
 <?php
-
+    include_once $_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/classes/models/Usuario.php";
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -12,7 +12,40 @@
     <title>Document</title>
 </head>
 <body>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>ações</th>
+    </tr>
+    </thead>
+    <tbody>
+<?php
+    if(isset($_COOKIE["id"])){
+        $usuarios = Usuario::findAll();
+        foreach ($usuarios as $row):
 
+            ?>
+
+        <tr>
+            <td><?php echo $row->id;  ?></td>
+            <td><?php echo $row->nome;  ?></td>
+            <td><?php echo $row->email ?></td>
+            <td><?php echo '<a href="index.php?action=delete&id=' . $row->id.'">Editar</a>' ?></td>
+        </tr>
+
+        <?php
+
+            endforeach;
+
+    }
+
+?>
+    </tbody>
+</table>
+<br><br>
 <!-- Formulário de login -->
         <form method="POST" action="login.php">
             Email:<input type="text" name="email"><br>
