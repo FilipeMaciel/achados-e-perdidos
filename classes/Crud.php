@@ -6,7 +6,6 @@ abstract class Crud extends DB{
 
     protected $table;
 
-    abstract public function update($id);
     abstract public function delete($id);
 
     /*****

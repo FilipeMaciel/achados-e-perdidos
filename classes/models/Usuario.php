@@ -32,7 +32,7 @@ class Usuario extends Crud{
     }
 
     #este método é abstrato na classe pai, logo é forçada a implementação do mesmo na classe filho
-    public function update($id){
+    public function update($id, $nome, $email, $senha, $telefone, $tipo){
         $sql = "UPDATE $this->table SET nome = :nome, email = :email, senha = :senha, telefone = :telefone, tipo = :tipo WHERE id = :id ";
         $prepare = DB::prepare($sql);
         $prepare->bindValue(':nome', $this->nome, PDO::PARAM_STR);

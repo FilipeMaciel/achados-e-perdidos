@@ -13,7 +13,7 @@ require_once "classes/DB.php";
 			$telefone=($_POST["telefone"]);
 			$tipo=($_POST["tipo"]);
 
-
+            $user = new Usuario();
 			$query= "SELECT * FROM usuarios WHERE email=:email";
 			
 			$prepare= $conn->prepare($query);
@@ -27,9 +27,9 @@ require_once "classes/DB.php";
 				return false;
 			}else{
                 #instancia a classe Usuarios e passa os parametros para o construtor
-                $user = new Usuario($nome, $email, $senha, $telefone, $tipo);
+                //$user = new Usuario($nome, $email, $senha, $telefone, $tipo);
 
-				if($resp = $user->insert()){
+				if($resp = $user->insert($nome, $email, $senha, $telefone, $tipo)){
                     echo "Conta registrada, inicie sessão...";
                 }else{
 				    var_dump($resp);
