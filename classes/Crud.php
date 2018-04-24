@@ -6,12 +6,14 @@ abstract class Crud extends DB{
 
     protected $table;
 
-    abstract  public function insert();
     abstract public function update($id);
     abstract public function delete($id);
 
-    /*****  Como estes métodos abaixo não precisam de dados específicos, eles podem ser generalizados para
+    /*****
+     *
+     * Como estes métodos abaixo não precisam de dados específicos, eles podem ser generalizados para
      * todas as classes que desejarem realizar o crud de informações
+     *
      *******/
     public static function find($id){
         $sql = "SELECT * FROM usuarios WHERE id = :id";

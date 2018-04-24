@@ -1,5 +1,12 @@
 <?php
     include_once $_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/classes/models/Usuario.php";
+
+    #função para exluir o usuário
+    if($_GET['action'] == 'delete'){
+        $user = new Usuario();
+
+        $user->delete($_GET['id']);
+    }
 ?>
 
 <!doctype html>
@@ -33,7 +40,7 @@
             <td><?php echo $row->id;  ?></td>
             <td><?php echo $row->nome;  ?></td>
             <td><?php echo $row->email ?></td>
-            <td><?php echo '<a href="index.php?action=delete&id=' . $row->id.'">Editar</a>' ?></td>
+            <td><?php echo '<a href="index.php?action=delete&id=' . $row->id.'">Excluir</a>' ?></td>
         </tr>
 
         <?php
