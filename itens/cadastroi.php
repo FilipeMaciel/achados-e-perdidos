@@ -13,15 +13,28 @@
 		$descricao=($_POST["descricao"]);
 		$data=date("Y-m-d h:i:s");
 		$imagem=($_POST["imagem"]);
-		$imagem="jhgjhg";
+		
 		$status=0;
 		$id=($_COOKIE["id"]);
+		$uploaddir = '/uploads/imagens';
+		$uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 
-		/*$insert=mysqli_query($connect,"INSERT INTO intens (nome_item,nome_pessoa,local_encontrado,descricao,data_encontrado,status,imagem,id_usuarios)VALUES('$nome_item','$nome_pessoa','$local','$descricao','$data',0,'$imagem','$id')");
-		echo mysqli_error($connect) ;*/
+			
+			if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+   			 echo "Arquivo válido e enviado com sucesso.\n";
+			} else {
+    			echo "Possível ataque de upload de arquivo!\n";
+			}
+			echo 'Aqui está mais informações de debug:';
+			print_r($_FILES);
+
+			
+?>
 		
-		$sql="INSERT INTO intens(nome_item,nome_pessoa,local_encontrado,descricao,data_encontrado,status,imagem,id_usuarios) 
-			VALUES (:nome_item,:nome_pessoa,:local,:descricao,:data,:status,:imagem,:id)";
+		
+		
+		$sql="INSERT INTO intens(nome_item,nome_pessoa,local_encontrado,descricao,data_encontrado,status,id_usuarios) 
+			VALUES (:nome_item,:nome_pessoa,:local,:descricao,:data,:status,:id)";
 
 
 		$prepare = $conn->prepare($sql);
@@ -31,7 +44,7 @@
 		$prepare->bindValue(':descricao',$descricao, PDO::PARAM_STR);
 		$prepare->bindValue(':data',$data, PDO::PARAM_STR);
 		$prepare->bindValue(':status',$status, PDO::PARAM_STR);
-		$prepare->bindValue(':imagem',$imagem, PDO::PARAM_STR);
+		
 		$prepare->bindValue(':id',$id, PDO::PARAM_STR);
 		$prepare->execute();
 		

@@ -5,13 +5,13 @@
 	<title></title>
 </head>
 <body >
-<form method="POST" action="cadastroi.php">
+<form enctype="multipart/form-data" method="POST" action="cadastroi.php">
 	Nome do item:<input type="text" name="nome"><br>
 	Quem encontrou:<input type="text" name="nome_pessoa"><br>
 	Local:<input type="text" name="local"><br>
 	Descrição:<input type="text" name="descricao"><br>
 		
-	Imagem:<input type="text" name="imagem" placeholder="imagem"><br>
+	Imagem:<input type="file" name="userfile" placeholder="imagem"><br>
 	<input type="submit" name="cadastro" value="Casdastrar item">
 
 </form>
