@@ -41,6 +41,7 @@
             <td><?php echo $row->nome;  ?></td>
             <td><?php echo $row->email ?></td>
             <td><?php echo '<a href="index.php?action=delete&id=' . $row->id.'">Excluir</a>' ?></td>
+        s
         </tr>
 
         <?php
