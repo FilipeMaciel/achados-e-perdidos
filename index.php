@@ -1,20 +1,14 @@
 <?php
     include_once $_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/classes/models/Usuario.php";
 
-#funções 
+#funções
     if(isset($_GET['action']) == 'delete'){
         $user = new Usuario();
 
         $user->delete($_GET['action']);
-    }if (isset($_GET['action']) =='update')
-        $user = new Usuario();
-      
-        $user ->update($_GET['action']);
     }if (isset($_GET['action']) =='insert')
-        $user = new Usuario();
-       
-        $user ->insert($_GET['action']);
-    }
+        //$user = new Usuario();
+
 ?>
 
 <!doctype html>
@@ -53,7 +47,24 @@
         </ul>
     </nav>
 
+        <?php
+        if (isset($_GET['action']) =='update'):
 
+        $user = Crud::find($_GET['id'])
+
+
+
+        ?>
+            <form method="POST" action="cadastro.php">
+                Nome:<input type="text" name="nome" value="<?php echo $user->nome  ?>"><br>
+                Email:<input type="text" name="email" value="<?php echo $user->email  ?>"><br>
+                Senha:<input type="password" name="senha" ><br>
+                Telefone:<input type="text" name="telefone" value="<?php echo $user->telefone  ?>"><br>
+                Tipo:<input type="number" name="tipo" max=1 min=0 ><br>
+                <input type="submit" name=cadastrar value="atualizar">
+            </form>
+
+        <?php endif ?>
 
          <div class="bg-modal conteiner-modal">
             <div >
