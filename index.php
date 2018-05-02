@@ -27,6 +27,15 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="css/menu.css">
     <link rel="stylesheet" type="text/css" href="css/modal.css">
+    <link rel="stylesheet" type="text/css" href="css/slider.css">
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script type="text/javascript" src="js/funcaoMenu.js"></script>
+     <script type="text/javascript" src="js/slider.js" async></script>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
 </head>
 <body>
 
@@ -36,40 +45,86 @@
     <nav class="menu">
         <ul>
             <li>
-                <label for="modal">Logar</label>
+                <label class="logar">Logar</label>
             </li>
             <li>
-                <label for="modal">Cadastrar</label>
+                <label class="cadastrar">Cadastrar</label>
             </li>
         </ul>
     </nav>
 
 
 
-    <input type="checkbox" id="modal">
-    <div class="bg-modal conteiner-modal">
-        <div class="modal-logar">
-            <form class="modal-logar">
-                <div class="formConfig">
-                    <!--  Formulário de login  -->
-                    E-mail: <input type="email" name="E-mail:" width="100%"> <br>
-                    Senha:  <input type="password"> <br>
-                    <input type="submit" value="Logar">
-                    <label for="modal" class="fechar">X</label>
+         <div class="bg-modal conteiner-modal">
+            <div >
+                <div class="modal-logar">
+                     <form method="POST" action="login.php"> 
+                         <div  class="formConfig"> 
+                                            PARA LOGAR <br>
+                             Email:<input type="text" name="email" width="100%"><br>
+                             Senha:<input type="password" name="senha"><br>
+                             <input type="submit" name="login" value="Logar">
+                             <label class="fechar">X</label>
+                         </div>
+                     </form>
+                </div>     
+            </div>
+
+
+            <div>
+                <div class="modal-cadastrar">
+                    <form method="POST" action="login.php"> 
+                         <div  class="formConfig"> 
+                                            PARA CADASTRO <br>
+                             Email:<input type="text" name="email" width="100%"><br>
+                             Senha:<input type="password" name="senha"><br>
+                             <input type="submit" name="login" value="Logar">
+                             <label class="fechar">X</label>
+                         </div>
+                     </form>
                 </div>
-            </form>
-        </div>
-
-        <div class="modal-cadastrar">
-
-            <!--  Formulário de cadastrar  -->
-        </div>
-
+           </div>
+        </div>   
+<div class="slide">
+    <div class="slide_nav">
+        <div class="slide_nav_intem go"></div>
+        <div class="slide_nav_intem back"></div>
     </div>
 
-
-
+    <?php 
+      for($i = 1; $i <= 4; $i++):
+        $slide = str_pad($i, 2, 0, STR_PAD_LEFT);
+        $first = ($i == 1 ? 'first' : '');
+        
+     ?>
+     
+     <article class="slide_item <?= $first; ?>">
+        <img src="imagens/<?= $slide; ?>.jpg" alt="[SLIDE <?= $slide; ?>]" title="SLIDE <?= $slide; ?>">
+        <div class="slide_item_desc">
+           <h1>Este é meu slide <?= $slide; ?> é sadflhsajdhsajkdhsajk sdakld jksa askd jkl</h1>
+           <p>sdjaslkjdklsa s klajdlksaj asklakls jdklsajdkas kdl jsad jsa a ksdk kas jlkjdskljsdkldjas k asjdksaj kd</p>
+        </div>   
+     </article>
+   <?php endfor;?> 
+</div>
 </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <table>
     <thead>
@@ -108,13 +163,16 @@
     </tbody>
 </table>
 <br><br>
+
+
+
 <!-- Formulário de login -->
         <form method="POST" action="login.php">
             Email:<input type="text" name="email"><br>
             Senha:<input type="password" name="senha"><br>
             <input type="submit" name="login" value="Logar">
 
-        </form>
+        </form> 
 
         <br><br><br>
 <!-- Formulário para cadastro -->
@@ -125,6 +183,6 @@
             Telefone:<input type="text" name="telefone" ><br>
             Tipo:<input type="number" name="tipo" max=1 min=0 ><br>
             <input type="submit" name=cadastrar value="cadastrar">
-        </form>
+        </form>       
 </body>
 </html>

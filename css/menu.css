@@ -12,6 +12,15 @@ header{
 	position: relative;
 
 }
+
+.cadastrar{
+	cursor: pointer;
+}
+
+.logar{
+	cursor: pointer;
+}
+
 .menu{
 	display: block;
 	width: 100%;
