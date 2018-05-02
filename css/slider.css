@@ -1,0 +1,27 @@
+@charset "UTF-8"
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+img{
+	max-width: 100%
+	vertical-align: middle;
+}
+
+.slide{
+	float: left;
+	width: 80%;
+	margin: 0 10%;
+	margin-top: 50px;
+	position: relative;
+}
+
+.slide-item{
+	display: none;
+}
+.slide-item.first{
+	display: block;
+}
