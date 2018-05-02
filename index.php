@@ -49,7 +49,7 @@
 
          <div class="bg-modal conteiner-modal">
             <div >
-                <div class="modal-logar">
+                <div class="modal modal-logar">
                      <form method="POST" action="login.php"> 
                          <div  class="formConfig"> 
                                             PARA LOGAR <br>
@@ -64,23 +64,30 @@
 
 
             <div>
-                <div class="modal-cadastrar">
-                    <form method="POST" action="login.php"> 
+                <div class="modal modal-cadastrar">
+              <!-- Formulário para cadastro -->
+
+                    <form method="POST" action="cadastro.php"> 
                          <div  class="formConfig"> 
                                             PARA CADASTRO <br>
-                             Email:<input type="text" name="email" width="100%"><br>
-                             Senha:<input type="password" name="senha"><br>
-                             <input type="submit" name="login" value="Logar">
+                             Nome:<input type="text" name="nome"><br>
+                            Email:<input type="text" name="email"><br>
+                            Senha:<input type="password" name="senha"><br>
+                            Telefone:<input type="text" name="telefone" ><br>
+                            Tipo:<input type="number" name="tipo" max=1 min=0 ><br>
+                            <input type="submit" name=cadastrar value="cadastrar">
                              <label class="fechar">X</label>
+
                          </div>
                      </form>
                 </div>
            </div>
         </div>   
+
 <div class="slide">
     <div class="slide_nav">
-        <div class="slide_nav_intem go"></div>
-        <div class="slide_nav_intem back"></div>
+        <div class="slide_nav_item go"> ▶ </div>
+        <div class="slide_nav_item back"> ◀ </div>
     </div>
 
     <?php 
@@ -165,14 +172,6 @@
         </form> 
 
         <br><br><br>
-<!-- Formulário para cadastro -->
-        <form method="POST" action="cadastro.php">
-            Nome:<input type="text" name="nome"><br>
-            Email:<input type="text" name="email"><br>
-            Senha:<input type="password" name="senha"><br>
-            Telefone:<input type="text" name="telefone" ><br>
-            Tipo:<input type="number" name="tipo" max=1 min=0 ><br>
-            <input type="submit" name=cadastrar value="cadastrar">
-        </form>       
+
 </body>
 </html>

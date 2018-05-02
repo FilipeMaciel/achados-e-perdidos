@@ -18,22 +18,8 @@
     display: none;
 }
 
-
-.modal-logar{
-	width: auto;
-	height: auto;
-	margin: auto auto;
-	z-index: 91;
-	position: relative;
-	padding: 50px;
-	background-color: #2E8B57;
-	margin-top: 20vh;
-
-
-}
-
-.modal-cadastrar{
-	width: auto;
+.modal{
+	width: 40%;
 	height: auto;
 	margin: auto auto;
 	z-index: 91;
@@ -42,6 +28,8 @@
 	background-color: #2E8B57;
 	margin-top: 20vh;
 }
+
+
 
 .formConfig{
 	text-align: center;
