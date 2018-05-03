@@ -53,7 +53,6 @@
         $user = Crud::find($_GET['id'])
 
 
-
         ?>
             <form method="POST" action="cadastro.php">
                 Nome:<input type="text" name="nome" value="<?php echo $user->nome  ?>"><br>
@@ -167,7 +166,6 @@
             <td><?php echo $row->email ?></td>
             <td><?php echo '<a href="index.php?action=delete&id=' . $row->id.'">Excluir</a>' ?></td>
             <td><?php echo '<a href="index.php?action=update&id='. $row->id.'">Atualizar</a>'?></td>
-            <td><?php echo '<a href="index.php?action=insert&id='. $row->id.'">Inserir</a>'?></td>
 
         </tr>
  

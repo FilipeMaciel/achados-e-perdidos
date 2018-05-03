@@ -29,6 +29,8 @@
         public function insert ($nome,$nome_pessoa,$local,$descricao,$imagem,
         $data,$status){
 
+
+
 	    if (isset($imagem)) {
 
 			$extensao=strtolower(substr($_FILES['userfile']['name'],-4));
@@ -38,9 +40,9 @@
 			move_uploaded_file($_FILES['userfile']['tmp_name'],$diretorio.
 				$novaimagem);
 
-            //$status=0;
-            $id=($_COOKIE["id"]);
-            $insert = "INSERT INTO intens(nome_item,nome_pessoa,local_encontrado,descricao,data_encontrado,status,id_usuarios) VALUES(:nome_item,:nome_pessoa,:localenc,:descricao,:data,:status,:id)";
+        }
+
+        $insert = "INSERT INTO intens(nome_item,nome_pessoa,local_encontrado,descricao,data_encontrado,status,id_usuarios) VALUES(:nome_item,:nome_pessoa,:localenc,:descricao,:data,:status,:id)";
             $prepare = DB::prepare($insert);
             $prepare->bindValue(':nome_item',$nome, PDO::PARAM_STR);
             $prepare->bindValue(':nome_pessoa',$nome_pessoa, PDO::PARAM_STR);
@@ -51,7 +53,7 @@
             $prepare->bindValue('novaimagem',$novaimagem,PDO::PARAM_STR);
             $prepare->bindValue(':id',$id, PDO::PARAM_STR);
             return $prepare->execute();
-        }/*if (isset($_POST["cadastro"])) {
+        /*if (isset($_POST["cadastro"])) {
 
 		$nome_item=($_POST["nome"]);
 		$nome_pessoa=($_POST["nome_pessoa"]);

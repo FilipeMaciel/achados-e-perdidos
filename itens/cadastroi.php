@@ -20,8 +20,8 @@
 		$id=($_COOKIE["id"]);
 
         $item = new Item();
-        $retrno = $item->insert($nome_item, $nome_pessoa, $local, $descricao, $imagem, $data, $status);
-        echo $retrno;
+        $return = $item->insert($nome_item, $nome_pessoa, $local, $descricao, $imagem, $data, $status);
+        echo $return;
         /*
 		$sql="INSERT INTO intens(nome_item,nome_pessoa,local_encontrado,descricao,data_encontrado,status,imagem,id_usuarios) 
 			VALUES (:nome_item,:nome_pessoa,:localenc,:descricao,:datainsert,:status,:imagem,:id)";
