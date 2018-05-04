@@ -126,33 +126,22 @@
 </div>
 </header>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <table>
     <thead>
     <tr>
         <th>ID</th>
         <th>Nome</th>
         <th>Email</th>
+        <th>Telefone</th>
+        <th>Tipo</th>
+
         <th>ações</th>
     </tr>
     </thead>
     <tbody>
+
+
+<!--    LISTAGEM DE USUÁRIOS     -->
 <?php
     if(isset($_COOKIE["id"])){
         $usuarios = Usuario::findAll();
@@ -164,6 +153,8 @@
             <td><?php echo $row->id;  ?></td>
             <td><?php echo $row->nome;  ?></td>
             <td><?php echo $row->email ?></td>
+            <td><?php echo $row->telefone ?></td>
+            <td><?php echo $row->tipo ?></td>
             <td><?php echo '<a href="index.php?action=delete&id=' . $row->id.'">Excluir</a>' ?></td>
             <td><?php echo '<a href="index.php?action=update&id='. $row->id.'">Atualizar</a>'?></td>
 
@@ -175,22 +166,11 @@
 
     }
 
+
 ?>
+<!--*****************************************************************  -->
+
     </tbody>
 </table>
-<br><br>
-
-
-
-<!-- Formulário de login -->
-        <form method="POST" action="login.php">
-            Email:<input type="text" name="email"><br>
-            Senha:<input type="password" name="senha"><br>
-            <input type="submit" name="login" value="Logar">
-
-        </form> 
-
-        <br><br><br>
-
 </body>
 </html>
