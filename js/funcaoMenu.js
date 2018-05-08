@@ -8,7 +8,7 @@ $(function(){
      	modalBg.show();	
      	modalLogar.show('slow');
      	modalCadastrar.hide();
-     	
+     	  
      });
 
      //faz aparecer CADASTRAR, e logar desaparecer

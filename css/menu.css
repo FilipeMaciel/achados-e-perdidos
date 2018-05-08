@@ -13,13 +13,12 @@ header{
 
 }
 
-.cadastrar{
+
+.menu label{
 	cursor: pointer;
 }
 
-.logar{
-	cursor: pointer;
-}
+
 
 .menu{
 	display: block;
@@ -28,6 +27,7 @@ header{
 	background-color: #2E8B57;
 	font-family: "Arial";
 	position: relative;
+	z-index: 1;
 }
 
 .menu ul{
@@ -39,10 +39,18 @@ header{
 .menu ul li{
 	width: 150px;
 	float: right;
+	height: 100%;
+	text-align: center;
+	align-content: center;
+	align-items: center;
 }
+.menu ul li a{
+	height: 100%;
+	text-align: center;
+	background-color: 
+	}
 
 .menu label{
-	padding: 16.3px;
 	display: block;
 	text-decoration: none;
 	text-align: center;
@@ -50,7 +58,7 @@ header{
 	color: #fff;
 }
 
-.menu label:hover{
+.iconMenu:hover{
 	background-color: #fff;
 	color: #555;
 }

@@ -24,8 +24,11 @@
     <link rel="stylesheet" type="text/css" href="css/slider.css">
 
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>    
      <script type="text/javascript" src="js/funcaoMenu.js"></script>
      <script type="text/javascript" src="js/slider.js" async></script>
+     <script type="text/javascript" src="js/efeitoSlider.js"></script>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
@@ -39,10 +42,10 @@
     <nav class="menu">
         <ul>
             <li>
-                <label class="logar">Logar</label>
+                <a href="#" class="logar iconMenu">Logar</a>
             </li>
             <li>
-                <label class="cadastrar">Cadastrar</label>
+                <a href="#" class="cadastrar iconMenu">Cadastrar</a>
             </li>
         </ul>
     </nav>
@@ -71,7 +74,6 @@
                 <div class="modal modal-logar">
                      <form method="POST" action="login.php"> 
                          <div  class="formConfig"> 
-                                            PARA LOGAR <br>
                              Email:<input type="text" name="email" width="100%"><br>
                              Senha:<input type="password" name="senha"><br>
                              <input type="submit" name="login" value="Logar">
@@ -87,8 +89,7 @@
               <!-- Formulário para cadastro -->
 
                     <form method="POST" action="cadastro.php"> 
-                         <div  class="formConfig"> 
-                                            PARA CADASTRO <br>
+                         <div  class="formConfig">     
                              Nome:<input type="text" name="nome"><br>
                             Email:<input type="text" name="email"><br>
                             Senha:<input type="password" name="senha"><br>
@@ -103,28 +104,18 @@
            </div>
         </div>   
 
-<div class="slide">
-    <div class="slide_nav">
-        <div class="slide_nav_item go"> ▶ </div>
-        <div class="slide_nav_item back"> ◀ </div>
-    </div>
-
-    <?php 
-      for($i = 1; $i <= 4; $i++):
-        $slide = str_pad($i, 2, 0, STR_PAD_LEFT);
-        $first = ($i == 1 ? 'first' : '');
         
-     ?>
-     
-     <article class="slide_item <?= $first; ?>">
-        <img src="imagens/<?= $slide; ?>.jpg" alt="[SLIDE <?= $slide; ?>]" title="SLIDE <?= $slide; ?>">
-        <div class="slide_item_desc">
-           <h1>Este é meu slide <?= $slide; ?> é sadflhsajdhsajkdhsajk sdakld jksa askd jkl</h1>
-           <p>sdjaslkjdklsa s klajdlksaj asklakls jdklsajdkas kdl jsad jsa a ksdk kas jlkjdskljsdkldjas k asjdksaj kd</p>
-        </div>   
-     </article>
-   <?php endfor;?> 
-</div>
+        <div id="slider">
+            <a href="#" id="prev"></a>
+            <a href="#" id="next"></a>
+
+            <ul>
+                <li class="one"></li>
+                <li class="two"></li>
+                <li class="three"></li>
+            </ul>
+        </div>
+
 </header>
 
 
@@ -175,24 +166,9 @@
 
             endforeach;
 
-    }
+          }
 
-?>
-    </tbody>
-</table>
-<br><br>
-
-
-
-<!-- Formulário de login -->
-        <form method="POST" action="login.php">
-            Email:<input type="text" name="email"><br>
-            Senha:<input type="password" name="senha"><br>
-            <input type="submit" name="login" value="Logar">
-
-        </form> 
-
-        <br><br><br>
+           ?>
 
 </body>
 </html>
