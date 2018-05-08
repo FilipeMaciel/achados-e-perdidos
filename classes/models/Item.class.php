@@ -1,30 +1,46 @@
 <?php 
-	include ("../classes/Crud.php");
+	include ($_SERVER['DOCUMENT_ROOT']."achados-e-perdidos/classes/Crud.php");
     //require__DIR__. '/classes/Crud.php';
 	 class Item extends Crud{
 
 		#atributos da classe Item
-		private $id, $nome_item, $nome_pessoa, $local, $descricao, $data, $status, $imagem, $id_usuario;
+		//private $id, $nome_item, $nome_pessoa, $local, $descricao, $data, $status, $imagem, $id_usuario;
+
 		//atualizas o iten
-        public function update($id,$nome_item,$nome_pessoa,$local,$descricao,$status,$imagem) {
-        	$sql ="UPDATE intem SET nome_item=:nome_item, nome_pessoa=:nome_pessoa, local_encontrado=:local, descricao=:descricao,status=:status, imagem=:imagem WHERE id=:id";
+        public function update($id, $nome_item,$nome_pessoa,$local,$descricao,$data,$status,$imagem) {
+        //adiciona imagem
+             if(isset($imagem)) {
+
+            $extensao=strtolower(substr($_FILES['userfile']['name'],-4));
+            $novaimagem=(time()). $extensao;
+            $diretorio="../upload/";
+            
+            move_uploaded_file($_FILES['userfile']['tmp_name'],$diretorio.
+                $novaimagem);
+
+          }
+        	$sql ="UPDATE intens SET nome_item=:nome_item, nome_pessoa=:nome_pessoa, local_encontrado=:local, descricao=:descricao,data_encontrado=:data, status=:status, imagem=:novaimagem WHERE id=:id";
         	$prepare = DB::prepare($sql);
-        	$prepare->bindValue(':nome_item', $nome_item, PDO::PARAM_STR);
-        	$prepare->bindValue(':nome_pessoa', $nome_pessoa, PDO::PARAM_STR);
-        	$prepare->bindValue(':local_encontrado', $local, PDO::PARAM_STR);
-        	$prepare->bindValue(':descricao', $descricao, PDO::PARAM_STR);
-        	$prepare->bindValue(':status', $status, PDO::PARAM_INT);
-        	$prepare->bindValue(':imagem', $imagem, PDO::PARAM_INT);
-        return $prepare->execute();
+        	$prepare->bindValue(':nome_item',$nome_item, PDO::PARAM_STR);
+            $prepare->bindValue(':nome_pessoa',$nome_pessoa, PDO::PARAM_STR);
+            $prepare->bindValue(':local',$local, PDO::PARAM_STR);
+            $prepare->bindValue(':descricao',$descricao, PDO::PARAM_STR);
+            $prepare->bindValue(':data',$data, PDO::PARAM_STR);
+            $prepare->bindValue(':status',$status, PDO::PARAM_STR);
+            $prepare->bindValue(':novaimagem',$novaimagem,PDO::PARAM_STR);
+            $prepare->bindValue(':id',$id, PDO::PARAM_INT);
+            return $prepare->execute();
 
         }
+
         //apaga o iten
         public function delete($id){
-        	$delete="DELETE FROM intem WHERE id=:id";
+        	$delete="DELETE FROM intens WHERE id=:id";
         	$prepare = DB::prepare($delete);
         	$prepare->bindValue(':id', $id, PDO::PARAM_STR);
         	return $prepare->execute();
         }
+
         //inseri o item
         public function insert ($nome,$nome_pessoa,$local,$descricao,$imagem,
         $data,$status){
