@@ -28,7 +28,6 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>    
      <script type="text/javascript" src="js/funcaoMenu.js"></script>
      <script type="text/javascript" src="js/slider.js" async></script>
-     <script type="text/javascript" src="js/efeitoSlider.js"></script>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
@@ -106,8 +105,8 @@
 
         
         <div id="slider">
-            <a href="#" id="prev"></a>
-            <a href="#" id="next"></a>
+            <a href="#" id="prev"> < </a>
+            <a href="#" id="next"> > </a>
 
             <ul>
                 <li class="one"></li>
