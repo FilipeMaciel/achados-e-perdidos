@@ -2,6 +2,7 @@
 <?php 
 	include("../classes/DB.php");
 	include "../classes/models/Item.class.php";
+	include_once $_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/classes/Crud.php";
 
 	$conn= new DB();
 	
@@ -20,31 +21,33 @@
 		$id=($_COOKIE["id"]);
 
         $item = new Item();
-        $retrno = $item->insert($nome_item, $nome_pessoa, $local, $descricao, $imagem, $data, $status);
-        echo $retrno;
-        /*
-		$sql="INSERT INTO intens(nome_item,nome_pessoa,local_encontrado,descricao,data_encontrado,status,imagem,id_usuarios) 
-			VALUES (:nome_item,:nome_pessoa,:localenc,:descricao,:datainsert,:status,:imagem,:id)";
-
-
-
-		$prepare = $conn->prepare($sql);
-		$prepare->bindValue(':nome_item',$nome_item, PDO::PARAM_STR);
-		$prepare->bindValue(':nome_pessoa',$nome_pessoa, PDO::PARAM_STR);
-		$prepare->bindValue(':localenc',$local, PDO::PARAM_STR);
-		$prepare->bindValue(':descricao',$descricao, PDO::PARAM_STR);
-		$prepare->bindValue(':datainsert',$data, PDO::PARAM_STR);
-		$prepare->bindValue(':status',$status, PDO::PARAM_STR);
-        $prepare->bindValue(':imagem',$imagem, PDO::PARAM_STR);
-		$prepare->bindValue(':id',$id, PDO::PARAM_STR);
-		$prepare->execute();
-		
-		
-		echo "Item registrado";
-		}else{
-		die("ERROR");
-*/
+        $return = $item->insert($nome_item, $nome_pessoa, $local, $descricao, $imagem, $data, $status);
+      
 		}
+//*****************ATUAILIZAR******************
+		if (isset($_POST["update"])) {
+			$acao = 0;
+		$nome_item=($_POST["nome"]);
+		$nome_pessoa=($_POST["nome_pessoa"]);
+		$local=($_POST["local"]);
+		$descricao=($_POST["descricao"]);
+		$data=date("Y-m-d h:i:s");
+		$status=0;
+		$id=($_POST["id"]);
+		if ($_FILES["userfile"]['size'] == 0) {
+			$imagem= Crud::findItens($id)->imagem;
+			$acao = 1;
 
+		}else{
+			$imagem=($_FILES["userfile"]);
+		}
+		$aimage = [
+			"acao" => $acao,
+			"image" => $imagem
+		];
 
+        $item = new Item();
+        $return = $item->update($id,$nome_item,$nome_pessoa,$local,$descricao,$data,$aimage,$status);
+		echo "Atualizado";
+	}
  ?>
