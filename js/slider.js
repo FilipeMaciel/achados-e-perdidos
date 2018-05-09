@@ -10,11 +10,11 @@ $(function(){
       $('#'+element+' ul').css('width', wdUl+'px'); 
    	  var qtd = qtdLi-1;
 
-   	  $('#prev')on('click', function(e){
+   	  $('#prev').on('click', function(e){
    	  	e.preventDefault();
    	  	if(i < qtd){
            $('#'+element+' ul').animate({marginRight:'-='+tamanhoP}, 600);
-           i++;
+           i--;
    	  	}else if(i == qtd){
            $('#'+element+' ul').animate({marginRight:'-='+0}, 600);
            i=0;
@@ -27,12 +27,12 @@ $(function(){
    	  	e.preventDefault();
    	  	if(i > 0){
           $('#'+element+' ul').animate({marginRight:'+='+tamanhoP},600);
-          i--;
+          i++;
    	  	}else{
    	  	  $('#'+element+' ul').animate({marginRight:'+='+(tamanhoP*qtd)},600);
           i=qtd;
    	  	}
-   	  	console.log(i);
+   	  	//console.log(i);
 
    	  });
    }
