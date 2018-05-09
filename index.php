@@ -63,11 +63,9 @@
         $item = Crud::findItens($_GET['id'])
         ?>
            <form enctype="multipart/form-data" method="POST" action="itens/cadastroi.php">
-                Nome do item:<input type="text" name="nome" 
-                value="<?php echo $item->nome_item ?>"><br>
+                Nome do item:<input type="text" name="nome" value="<?php echo $item->nome_item ?>"><br>
                 
-                Quem encontrou:<input type="text" name="nome_pessoa"
-                value="<?php echo $item->nome_pessoa ?>"><br>
+                Quem encontrou:<input type="text" name="nome_pessoa" value="<?php echo $item->nome_pessoa ?>"><br>
                 
                 Local:<input type="text" name="local" value="<?php echo $item->local_encontrado ?>"><br>
                 
@@ -75,14 +73,20 @@
                     <div >
                         <img style="width:50px; height: 50px; " src="upload/<?php echo $item->imagem ?>">
                     </div>
-                Imagem:<input type="file" name="userfile" placeholder="imagem"><br>
+                Imagem:<input type="file" name="userfile" placeholder="imagem" value="upload/<?php echo $item->imagem ?>"><br>
+                
                 <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
 
                 <input type="submit" name="update" value="Altualizar">
 
             </form>
 
-        <?php endif ?>
+        <?php 
+        
+        $imagem= Crud::findItens($_GET['id'])->imagem;
+        var_dump($imagem);
+        
+    endif; ?>
        
 
          <div class="bg-modal conteiner-modal">
