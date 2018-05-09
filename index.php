@@ -1,6 +1,6 @@
 <?php
-    include_once $_SERVER['DOCUMENT_ROOT']."achados-e-perdidos/classes/models/Item.class.php";
-    include_once $_SERVER['DOCUMENT_ROOT']."achados-e-perdidos/classes/Crud.php";
+    include_once $_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/classes/models/Item.class.php";
+    include_once $_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/classes/Crud.php";
     //include_once $_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/classes/models/Item.class.php";
 #funções
         /*if(isset($_GET['action']) == 'delete'){
