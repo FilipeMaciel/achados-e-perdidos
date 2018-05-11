@@ -40,5 +40,18 @@ abstract class Crud extends DB{
         $prepare->execute();
         return $prepare->fetchAll();
     }
+    public static function findCategoria($id){
+        $sql = "SELECT * FROM categorias WHERE id = :id";
+        $prepare = DB::prepare($sql);
+        $prepare->bindValue(':id', $id, PDO::PARAM_STR);
+        $prepare->execute();
+        return $prepare->fetch();
+    }
+    public static function findAllCategoria(){
+        $sql = "SELECT * FROM categorias";
+        $prepare = DB::prepare($sql);
+        $prepare->execute();
+        return $prepare->fetchAll();
+    }
 
 }
