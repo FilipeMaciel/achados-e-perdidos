@@ -73,29 +73,25 @@
             $prepare->bindValue(':novaimagem',$novaimagem,PDO::PARAM_STR);
             $prepare->bindValue(':id',$_COOKIE["id"], PDO::PARAM_STR);
             return $prepare->execute();
-        /*if (isset($_POST["cadastro"])) {
+            
+            $idU="SELECT last_insert_id()";
+                
+            $sql="INSERT INTO intens_has_categorias(id_intens, id_categorias) VALUES(:item, :categoria)";
+            
+            $exc = DB::prepare($sql);
+            $exc->bindValue(':item',$idU, PDO::PARAM_STR);
+            $exc->bindValue(':categoria',$categoria, PDO::PARAM_STR);
+            return $exc->execute();
+            
 
-		$nome_item=($_POST["nome"]);
-		$nome_pessoa=($_POST["nome_pessoa"]);
-		$local=($_POST["local"]);
-		$descricao=($_POST["descricao"]);
-		$data=date("Y-m-d h:i:s");
-		$imagem=($_POST["imagem"]);
-		
-		$status=0;
-		$id=($_COOKIE["id"]);
-		$insert = "INSERT INTO intens(nome_item,nome_pessoa,local_encontrado,descricao,data_encontrado,status,id_usuarios) VALUES(:nome_item,:nome_pessoa,:localenc,:descricao,:data,:status,:id)";
-		$prepare = DB::prepare($insert);
-		$prepare->bindValue(':nome_item',$nome_item, PDO::PARAM_STR);
-		$prepare->bindValue(':nome_pessoa',$nome_pessoa, PDO::PARAM_STR);
-		$prepare->bindValue(':localenc',$local, PDO::PARAM_STR);
-		$prepare->bindValue(':descricao',$descricao, PDO::PARAM_STR);
-		$prepare->bindValue(':data',$data, PDO::PARAM_STR);
-		$prepare->bindValue(':status',$status, PDO::PARAM_STR);
-		$prepare->bindValue('novaimagem',$novaimagem,PDO::PARAM_STR);
-		$prepare->bindValue(':id',$id, PDO::PARAM_STR);
-		return $prepare->execute();
-		}*/
-      }
-    }
+        if ($sql= 1) {
+
+            require_once("sucesso!");
+
+        }else{
+            require_once("falha!");
+
+        }  
+    } 
+}
  ?>

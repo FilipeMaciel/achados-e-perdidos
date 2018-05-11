@@ -22,11 +22,9 @@
 
 			foreach ($categorias as $cat):
 				
-				?>
-				<option value="<?php echo $cat->id ?>" ><?php echo $cat->nome?> </option>
-				<?php
-
-
+		?>
+		<option value="<?php echo $cat->id ?>" ><?php echo $cat->nome?> </option>
+		<?php
 			endforeach;
 		?>	
 	</select>

@@ -9,21 +9,26 @@
 	//$connect = mysqli_connect("localhost","root","","achados") or die("ERROR");
 
 	if (isset($_POST["cadastro"])) {
-
-		$nome_item=($_POST["nome"]);
+			$nome_item=($_POST["nome"]);
 		$nome_pessoa=($_POST["nome_pessoa"]);
 		$local=($_POST["local"]);
 		$descricao=($_POST["descricao"]);
 		$data=date("Y-m-d h:i:s");
 		$imagem=($_FILES["userfile"]);
-		
+		$categoria=($_POST["categorias"]);
 		$status=0;
 		$id=($_COOKIE["id"]);
 
         $item = new Item();
-        $return = $item->insert($nome_item, $nome_pessoa, $local, $descricao, $imagem, $data, $status);
-      
+        $return = $item->insert($nome_item, $nome_pessoa, $local, $descricao, $imagem, $data, $status,$categoria);
+       
+      	
+		echo "certo".$categoria;
+
 		}
+
+		
+
 //*****************ATUAILIZAR******************
 		if (isset($_POST["update"])) {
 			$acao = 0;
