@@ -19,4 +19,7 @@ class DB{
     public static function prepare($sql){
         return self::getInstance()->prepare($sql);
     }
+    public static function banco(){
+        return self::getInstance();
+    }
 }

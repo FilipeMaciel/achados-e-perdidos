@@ -1,5 +1,5 @@
 <?php 
-	include ($_SERVER['DOCUMENT_ROOT']."achados-e-perdidos/classes/Crud.php");
+	 include ($_SERVER['DOCUMENT_ROOT']."achados-e-perdidos/classes/Crud.php");
 	 class Item extends Crud{
 
 		//atualizas o iten
@@ -47,23 +47,26 @@
 
         //inseri o item
         public function insert ($nome,$nome_pessoa,$local,$descricao,$imagem,
-        $data,$status){
+        $data,$status,$categoria){
+        try {
+        $banco = new PDO("mysql:host=localhost;dbname=achados", "root", "");
+        
+        $banco->beginTransaction();
 
+        if (isset($imagem)) {
 
-
-	    if (isset($imagem)) {
-
-			$extensao=strtolower(substr($_FILES['userfile']['name'],-4));
-			$novaimagem=md5(time()). $extensao;
-			$diretorio="../upload/";
-			
-			move_uploaded_file($_FILES['userfile']['tmp_name'],$diretorio.
-				$novaimagem);
+            $extensao=strtolower(substr($_FILES['userfile']['name'],-4));
+            $novaimagem=md5(time()). $extensao;
+            $diretorio="../upload/";
+            
+            move_uploaded_file($_FILES['userfile']['tmp_name'],$diretorio.
+                $novaimagem);
 
         }
 
-        $insert = "INSERT INTO intens(nome_item,nome_pessoa,local_encontrado,descricao,data_encontrado,status,imagem,id_usuarios) VALUES(:nome_item,:nome_pessoa,:localenc,:descricao,:data,:status,:novaimagem,:id)";
-            $prepare = DB::prepare($insert);
+            $prepare=$banco->prepare("INSERT INTO intens(nome_item,nome_pessoa,local_encontrado,descricao,data_encontrado,status,imagem,id_usuarios) VALUES(:nome_item,:nome_pessoa,:localenc,:descricao,:data,:status,:novaimagem,:id)");
+
+            //$prepare = $con->prepare($insert);
             $prepare->bindValue(':nome_item',$nome, PDO::PARAM_STR);
             $prepare->bindValue(':nome_pessoa',$nome_pessoa, PDO::PARAM_STR);
             $prepare->bindValue(':localenc',$local, PDO::PARAM_STR);
@@ -72,26 +75,29 @@
             $prepare->bindValue(':status',$status, PDO::PARAM_STR);
             $prepare->bindValue(':novaimagem',$novaimagem,PDO::PARAM_STR);
             $prepare->bindValue(':id',$_COOKIE["id"], PDO::PARAM_STR);
-            return $prepare->execute();
+            $prepare->execute();
+       
+        if (!$prepare) {
+            die('Error ao inserir!');
+        }
+        
+        $IDultimo=$banco->lastInsertId();
+        
+        $sql=$banco->prepare("INSERT INTO intens_has_categorias(id_intens, id_categorias) VALUES(:item, :categoria)");
+        $sql->bindValue(':item', $IDultimo, PDO::PARAM_STR);
+        $sql->bindValue(':categoria',$categoria, PDO::PARAM_STR);
+             $sql->execute();
             
-            $idU="SELECT last_insert_id()";
-                
-            $sql="INSERT INTO intens_has_categorias(id_intens, id_categorias) VALUES(:item, :categoria)";
-            
-            $exc = DB::prepare($sql);
-            $exc->bindValue(':item',$idU, PDO::PARAM_STR);
-            $exc->bindValue(':categoria',$categoria, PDO::PARAM_STR);
-            return $exc->execute();
-            
+        if (!$sql) {
+            die('Erro ao inserir FK');
+        }
 
-        if ($sql= 1) {
-
-            require_once("sucesso!");
-
-        }else{
-            require_once("falha!");
-
-        }  
+        $banco->commit();
+        }
+        catch(PDOException $e) {
+        echo $e->getMessage();
+        }
     } 
+
 }
  ?>

@@ -177,6 +177,7 @@
             <td><?php echo Crud::find($row->id_usuarios)->nome ?></td>
             <td><?php echo '<a href="index.php?action=delete&id=' . $row->id.'">Excluir</a>' ?></td>
             <td><?php echo '<a href="index.php?action=update&id='. $row->id.'">Atualizar</a>'?></td>
+            <td><?php echo '<a href="devolvidos/devolvidos1.php?action=devolver&id='. $row->id.'">Devolver</a>'?></td>
 
         </tr>
  
