@@ -90,7 +90,7 @@
             <div >
                 <div class="modal-content modal-logar">
                      <form class=" black-text" method="POST" action="login.php"> 
-                        
+                        <div  class="formConfig">
 
                           <div class="input-field col s12">
                              <label for="email">Email</label>
@@ -101,10 +101,9 @@
                              <input type="password" name="senha" id="senha"><br>
                           </div>
                            
-                             
-                             <input type="submit" name="login" value="Logar">
+                             <input type="submit" name="login" value="Logar" class="waves-effect waves-light btn cursor" >
                              <label class="fechar">X</label>
-                         
+                         </div>
                      </form>
                 </div>     
             </div>
@@ -121,7 +120,7 @@
                             Senha:<input type="password" name="senha"><br>
                             Telefone:<input type="text" name="telefone" ><br>
                             Tipo:<input type="number" name="tipo" max=1 min=0 ><br>
-                            <input type="submit" name=cadastrar value="cadastrar">
+                            <input type="submit" name=cadastrar value="cadastrar" class="waves-effect waves-light btn cursor">
                              <label class="fechar">X</label>
 
                          </div>

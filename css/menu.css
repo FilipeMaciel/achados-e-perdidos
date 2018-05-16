@@ -13,6 +13,10 @@ header{
 
 }
 
+.cursor{
+	cursor: pointer;
+}
+
 
 .menu label{
 	cursor: pointer;
