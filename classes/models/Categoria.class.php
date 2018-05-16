@@ -1,5 +1,5 @@
 <?php
-	include ($_SERVER['DOCUMENT_ROOT']."achados-e-perdidos/classes/Crud.php");
+	include ($_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/classes/Crud.php");
 	
 	class Categoria extends Crud{
 

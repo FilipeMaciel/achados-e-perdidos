@@ -1,6 +1,6 @@
 
 <?php  
-	include_once $_SERVER['DOCUMENT_ROOT']."achados-e-perdidos/classes/Crud.php";
+	include_once $_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/classes/Crud.php";
  ?>
 <!DOCTYPE html>
 

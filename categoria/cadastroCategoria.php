@@ -1,7 +1,7 @@
 <?php
 	include("../classes/DB.php");
 	include "../classes/models/Categoria.class.php";
-	include_once $_SERVER['DOCUMENT_ROOT']."achados-e-perdidos/classes/Crud.php";
+	include_once $_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/classes/Crud.php";
 
 	if(isset($_POST["cadastro"])){
 
