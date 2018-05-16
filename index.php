@@ -88,21 +88,30 @@
 
          <div class="bg-modal conteiner-modal">
             <div >
-                <div class="modal modal-logar">
-                     <form method="POST" action="login.php"> 
-                         <div  class="formConfig"> 
-                             Email:<input type="text" name="email" width="100%"><br>
-                             Senha:<input type="password" name="senha"><br>
+                <div class="modal-content modal-logar">
+                     <form class=" black-text" method="POST" action="login.php"> 
+                        
+
+                          <div class="input-field col s12">
+                             <label for="email">Email</label>
+                             <input type="text" name="email" width="100%" id="email"><br>
+                          </div>
+                          <div class="input-field col s12">
+                             <label for="senha">Senha</label>
+                             <input type="password" name="senha" id="senha"><br>
+                          </div>
+                           
+                             
                              <input type="submit" name="login" value="Logar">
                              <label class="fechar">X</label>
-                         </div>
+                         
                      </form>
                 </div>     
             </div>
 
 
             <div>
-                <div class="modal modal-cadastrar">
+                <div class="modal-content modal-cadastrar">
               <!-- Formulário para cadastro -->
 
                     <form method="POST" action="cadastro.php"> 
