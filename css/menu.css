@@ -21,7 +21,12 @@ header{
 .menu label{
 	cursor: pointer;
 }
-
+ 
+.addItem{
+	top: 50px;
+	right: 0px;
+	
+} 
 
 
 .menu{

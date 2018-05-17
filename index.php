@@ -54,38 +54,6 @@
     </nav>
 
 
-        <?php
-        if (isset($_GET['action']) && $_GET['action'] =='update'):
-
-        $item = Crud::findItens($_GET['id'])
-        ?>
-           <form enctype="multipart/form-data" method="POST" action="itens/cadastroi.php">
-                Nome do item:<input type="text" name="nome" value="<?php echo $item->nome_item ?>"><br>
-                
-                Quem encontrou:<input type="text" name="nome_pessoa" value="<?php echo $item->nome_pessoa ?>"><br>
-                
-                Local:<input type="text" name="local" value="<?php echo $item->local_encontrado ?>"><br>
-                
-                Descrição:<input type="text" name="descricao" value="<?php echo $item->descricao ?>"><br>
-                    <div >
-                        <img style="width:50px; height: 50px; " src="upload/<?php echo $item->imagem ?>">
-                    </div>
-                Imagem:<input type="file" name="userfile" placeholder="imagem" value="upload/<?php echo $item->imagem ?>"><br>
-                
-                <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
-
-                <input type="submit" name="update" value="Altualizar">
-
-            </form>
-
-        <?php 
-        
-        $imagem= Crud::findItens($_GET['id'])->imagem;
-        var_dump($imagem);
-        
-    endif; ?>
-       
-
          <div class="bg-modal conteiner-modal">
             <div >
                 <div class="modal-content modal-logar">
@@ -127,12 +95,68 @@
                      </form>
                 </div>
            </div>
+
+                <div class="modal-content modal-update">
+                       <!-- Formulário para cadastro -->
+                    
+                        <div class="formConfig">
+                           <form enctype="multipart/form-data" method="POST" action="itens/cadastroi.php">
+                                Nome do item:<input type="text" name="nome" value="<?php echo $item->nome_item ?>"><br>
+                                
+                                Quem encontrou:<input type="text" name="nome_pessoa" value="<?php echo $item->nome_pessoa ?>"><br>
+                                
+                                Local:<input type="text" name="local" value="<?php echo $item->local_encontrado ?>"><br>
+                                
+                                Descrição:<input type="text" name="descricao" value="<?php echo $item->descricao ?>"><br>
+                                    <div >
+                                        <img style="width:50px; height: 50px; " src="upload/<?php echo $item->imagem ?>">
+                                    </div>
+                                <input type="file" name="userfile" placeholder="imagem" value="upload/<?php echo $item->imagem ?>"><br>
+                                <select name="categorias">
+                                    <option disabled selected>Categoria</option>
+                                    <?php
+                                      $categorias = Crud::findAllCategoria();
+
+                                      foreach ($categorias as $cat):
+                                        
+                                    ?>
+                                    <option value="<?php echo $cat->id ?>" ><?php echo $cat->nome?> </option>
+                                    <?php
+                                      endforeach;
+                                    ?>  
+                                  </select>
+                                <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
+
+                                <input type="submit" name="update" value="Altualizar">
+
+                                <label class="fechar">X</label>
+                            </form>
+
+                          
+                       </div>
+        
+ 
+
         </div>   
+
+
+    
+                
+                            
+
+
+                    
+                </div>
+           </div>
+    
+
+
+         
 
         
         <div id="slider">
-            <a href="#" id="prev"> < </a>
-            <a href="#" id="next"> > </a>
+            <a href="#" id="prev">  </a>
+            <a href="#" id="next">  </a>
 
             <ul>
                 <li class="one"></li>
@@ -154,22 +178,7 @@
 
             ?>
 
-        <tr>
-            <td><?php echo $row->id;  ?></td>
-            <td><?php echo $row->nome_item;  ?></td>
-            <td><?php echo $row->nome_pessoa ?></td>
-            <td><?php echo $row->local_encontrado  ?></td>
-            <td><?php echo $row->descricao ?></td>
-            <td><?php echo $row->data_encontrado ?></td>
-            <td><?php echo $row->status ?></td>
-            <td><?php echo $row->imagem ?></td>
-            <td><?php echo Crud::find($row->id_usuarios)->nome ?></td>
-            <td><?php echo '<a href="index.php?action=delete&id=' . $row->id.'">Excluir</a>' ?></td>
-            <td><?php echo '<a href="index.php?action=update&id='. $row->id.'">Atualizar</a>'?></td>
-            <td><?php echo '<a href="devolvidos/devolvidos1.php?action=devolver&id='. $row->id.'">Devolver</a>'?></td>
-
-        </tr>
-
+  
             <div class="col l3 m6 s12 card">
                 <div class="card-image waves-effect waves-block waves-light">
                   <img class="activator" src="upload/<?php echo $row->imagem ?>">
@@ -180,7 +189,7 @@
                 </div>
                 <div class="card-action">
                         <?php echo '<a href="index.php?action=delete&id=' . $row->id.'">Excluir</a>' ?>
-                        <a href="index.php?action=update&id=<?php echo $row->id ?>">Atualizar</a>
+                        <a href="#" class="botaoAtualizar">Atualizar</a>
 
                 </div>
                 <div class="card-reveal">
