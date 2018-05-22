@@ -117,8 +117,8 @@
                               Local:<input type="text" name="local" value=""><br>
                               
                               Descrição:<input type="text" name="descricao" value=""><br>
-                                  <div >
-                                      <img style="width:50px; height: 50px; " src="">
+                                  <div class="cont-image-update">
+
                                   </div>
                               <input type="file" name="userfile" placeholder="imagem" value=""><br>
                               

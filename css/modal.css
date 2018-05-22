@@ -65,7 +65,6 @@ form .fechar:hover{
 	width: 100%;
 	height: 100vh;
 	margin: auto auto;
-	z-index: 91;
 	position: absolute;
 	padding: 50px;
 	margin-top: 20vh;
@@ -76,7 +75,6 @@ form .fechar:hover{
 	width: 100%;
 	height: 100vh;
 	margin: auto auto;
-	z-index: 91;
 	position: absolute;
 	padding: 50px;
 	margin-top: 20vh;
@@ -86,4 +84,8 @@ form .fechar:hover{
 .modal-header{
 	width: 40%;
 	background-color: #2E8B57!important;
+}
+.img-modal{
+	width: 60px;
+	height: 60px;
 }
