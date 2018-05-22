@@ -29,7 +29,7 @@
 		
 
 //*****************ATUAILIZAR******************
-		if (isset($_POST["update"])) {
+		if ($_POST["acao"] == "update") {
 			$acao = 0;
 		$nome_item=($_POST["nome"]);
 		$nome_pessoa=($_POST["nome_pessoa"]);

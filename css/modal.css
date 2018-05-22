@@ -6,38 +6,30 @@
 }
 
 .bg-modal{
-	background-color: rgba(0,0,0,.5);
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0, .5);
 	z-index: 90;
 }
 .conteiner-modal{
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	position: absolute;
 	top: 0;
 	left: 0;
 	transition:  all .5s;
     display: none;
-}
-
-.modal-content{
-	width: 40%;
-	height: auto;
-	margin: auto auto;
-	z-index: 91;
-	position: relative;
-	padding: 50px;
-	background-color: #2E8B57;
-	margin-top: 20vh;
-	
-
-}
- 
-
+} 
 
 .formConfig{
 	text-align: center;
 	line-height: 2;
 	color: #fff;
+	position: relative;
 
 }
 
@@ -55,4 +47,43 @@ form .fechar:hover{
 	background-color: #ff0000;
 	color: #fff;
 	cursor: pointer;
+}
+.bg-modal-card{
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0, .5);
+}
+.modal-update{
+	width: 40%;
+	background-color: #2E8B57;
+}
+.conteiner-modalheader{
+	width: 100%;
+	height: 100vh;
+	margin: auto auto;
+	z-index: 91;
+	position: absolute;
+	padding: 50px;
+	margin-top: 20vh;
+	display: none;
+	z-index: 92;
+}
+.conteiner-update{
+	width: 100%;
+	height: 100vh;
+	margin: auto auto;
+	z-index: 91;
+	position: absolute;
+	padding: 50px;
+	margin-top: 20vh;
+	display: none;
+	z-index: 92;
+}
+.modal-header{
+	width: 40%;
+	background-color: #2E8B57!important;
 }

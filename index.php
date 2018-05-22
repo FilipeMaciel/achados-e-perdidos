@@ -26,7 +26,8 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>    
-     <script type="text/javascript" src="js/funcaoMenu.js"></script>
+     <script type="text/javascript" src="js/modalcards.js"></script>
+      <script type="text/javascript" src="js/funcaoMenu.js"></script>
      <script type="text/javascript" src="js/slider.js" async></script>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -53,10 +54,10 @@
         </ul>
     </nav>
 
-
-         <div class="bg-modal conteiner-modal">
-            <div >
-                <div class="modal-content modal-logar">
+<div class="bg-modal"></div>
+         <div class="conteiner-modal">
+            <div class="modal-header">
+                <div class="conteiner-modalheader modal-logar">
                      <form class=" black-text" method="POST" action="login.php"> 
                         <div  class="formConfig">
 
@@ -77,8 +78,8 @@
             </div>
 
 
-            <div>
-                <div class="modal-content modal-cadastrar">
+            <div class="modal-header">
+                <div class="conteiner-modalheader modal-cadastrar">
               <!-- Formulário para cadastro -->
 
                     <form method="POST" action="cadastro.php"> 
@@ -96,62 +97,42 @@
                 </div>
            </div>
 
-                <div class="modal-content modal-update">
-                       <!-- Formulário para cadastro -->
-                    
-                        <div class="formConfig">
-                           <form enctype="multipart/form-data" method="POST" action="itens/cadastroi.php">
-                                Nome do item:<input type="text" name="nome" value="<?php echo $item->nome_item ?>"><br>
-                                
-                                Quem encontrou:<input type="text" name="nome_pessoa" value="<?php echo $item->nome_pessoa ?>"><br>
-                                
-                                Local:<input type="text" name="local" value="<?php echo $item->local_encontrado ?>"><br>
-                                
-                                Descrição:<input type="text" name="descricao" value="<?php echo $item->descricao ?>"><br>
-                                    <div >
-                                        <img style="width:50px; height: 50px; " src="upload/<?php echo $item->imagem ?>">
-                                    </div>
-                                <input type="file" name="userfile" placeholder="imagem" value="upload/<?php echo $item->imagem ?>"><br>
-                                <select name="categorias">
-                                    <option disabled selected>Categoria</option>
-                                    <?php
-                                      $categorias = Crud::findAllCategoria();
 
-                                      foreach ($categorias as $cat):
-                                        
-                                    ?>
-                                    <option value="<?php echo $cat->id ?>" ><?php echo $cat->nome?> </option>
-                                    <?php
-                                      endforeach;
-                                    ?>  
-                                  </select>
-                                <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
-
-                                <input type="submit" name="update" value="Altualizar">
-
-                                <label class="fechar">X</label>
-                            </form>
-
-                          
-                       </div>
-        
- 
-
-        </div>   
-
-
-    
-                
-                            
-
-
-                    
-                </div>
-           </div>
+          </div>
+           
     
 
 
-         
+       
+               <div class="bg-modal-card"></div>
+              <div class="conteiner-update">
+                     <!-- Formulário para cadastro -->
+                  
+                      <div class="formConfig modal-update">
+                         <form enctype="multipart/form-data" method="POST" action="itens/cadastroi.php">
+                              Nome do item:<input type="text" name="nome" value=""><br>
+                              
+                              Quem encontrou:<input type="text" name="nome_pessoa" value=""><br>
+                              
+                              Local:<input type="text" name="local" value=""><br>
+                              
+                              Descrição:<input type="text" name="descricao" value=""><br>
+                                  <div >
+                                      <img style="width:50px; height: 50px; " src="">
+                                  </div>
+                              <input type="file" name="userfile" placeholder="imagem" value=""><br>
+                              
+                              <input type="hidden" name="id" value="">
+
+                              <input type="submit" name="update" value="Altualizar">
+
+                              <label class="fechar">X</label>
+                          </form>
+
+                       
+                     </div>
+                       
+            </div>  
 
         
         <div id="slider">
@@ -172,7 +153,7 @@
 
     <div class="row">
 <?php
-    if(isset($_COOKIE["id"])){
+    //if(isset($_COOKIE["id"])){
         $itens = Item::findAllItens();
         foreach ($itens as $row):
 
@@ -185,15 +166,18 @@
                 </div>
                 <div class="card-content">
                   <span class="card-title activator grey-text text-darken-4"><?php echo $row->nome_item;  ?><i class="material-icons right">more_vert</i></span>
-
+                    <input type="text" class="id-card" value="<?php echo $row->id ?>">
                 </div>
                 <div class="card-action">
                         <?php echo '<a href="index.php?action=delete&id=' . $row->id.'">Excluir</a>' ?>
-                        <a href="#" class="botaoAtualizar">Atualizar</a>
+
+                        <a href="#" class="botaoAtualizar modal-atualizar">Atualizar</a>
 
                 </div>
                 <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4"><?php echo $row->nome_item;  ?><i class="material-icons right">close</i></span>
+                  <span class="card-title grey-text text-darken-4"><?php echo $row->nome_item;  ?>
+                      <i class="material-icons right">close</i>
+                  </span>
                     <p>Descrição: <?php echo $row->descricao ?></p>
                     <p>Local Encontrado: <?php echo $row->local_encontrado ?></p>
                     <p>Data: <?php echo $row->data_encontrado ?></p>
@@ -201,14 +185,12 @@
                 </div>
             </div>
            
-        
-     
 
         <?php 
         
     endforeach;
          
-        } ?>
+       // } ?>
  </div>
 
 
