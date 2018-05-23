@@ -5,11 +5,16 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-	<meta charset="utf-8">
-	<title></title>
-</head>
+
+ <?php
+   include "../partials/head.php";
+ ?>
 <body >
+ 
+ <?php
+   include "../partials/menu.php";
+ ?>
+
 <form enctype="multipart/form-data" method="POST" action="cadastroi.php">
 	Nome do item:<input type="text" name="nome"><br>
 	Quem encontrou:<input type="text" name="nome_pessoa"><br>

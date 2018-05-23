@@ -1,17 +1,10 @@
 <header>
     <input type="checkbox" id="bt_menu">
     <label for='bt_menu'>&#9776;</label>
-    <nav class="menu">
-        <ul>
-            <li>
-                <a href="#" class="logar iconMenu">Logar</a>
-            </li>
-            <li>
-                <a href="#" class="cadastrar iconMenu">Cadastrar</a>
-            </li>
-        </ul>
-    </nav>
-
+    
+    <?php
+      include "partials/menu.php"
+    ?>
 
     
            
