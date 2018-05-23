@@ -10,7 +10,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/classes/Crud.php";
 		$acao = $_POST['acao'];
 	}
 
-	if($acao == "update"){
+	if($acao == "open_update"){
 	    $itens = Item::findItens($parametro);
 		echo json_encode($itens);
 	}

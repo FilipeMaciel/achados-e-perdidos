@@ -8,8 +8,8 @@ $(function(){
 		var modalBg = $('.bg-modal-card');
 		var modalUpdate = $('.conteiner-update');
         var remove = $(this).closest('.card').find('.cont-image-update');
-        remove.remove();
-        console.log( $(this).closest('.card').find('.img-modal'));
+        $(".cont-image-update").find('.img-modal').remove();
+        
 		modalBg.show();
 		modalUpdate.show();
 
@@ -20,7 +20,7 @@ $(function(){
                   type: 'post',
                   dataType: 'json',
                   data: {
-                      acao: 'update',
+                      acao: 'open_update',
                       parametro: id
 
                   },
