@@ -12,6 +12,7 @@ $(function(){
      	modalLogar.show('slow');
      	modalCadastrar.hide();
           modalUpdate.hide();
+          
      	  
      });
 
