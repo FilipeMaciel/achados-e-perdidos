@@ -21,10 +21,11 @@
         $item = new Item();
         $return = $item->insert($nome_item, $nome_pessoa, $local, $descricao, $imagem, $data, $status,$categoria);
        
-      	
-		echo "certo".$categoria;
-
+	
+			header("Location: ../index.php");	
 		}
+
+
 
 		
 

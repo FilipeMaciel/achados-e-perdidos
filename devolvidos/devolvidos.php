@@ -5,8 +5,7 @@ if (isset($_POST["devolvidos"])) {
 	$telefone=$_POST["telefone"];
 	$email=$_POST["email"];
 	$data=date("Y-m-d h:i:s");
-
-
+	
 
 }
  ?>

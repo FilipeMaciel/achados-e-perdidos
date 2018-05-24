@@ -19,10 +19,10 @@
 
 			$id=$slc->fetchObject();
 			$id = $id->id;
-			echo "entrou";
 			#criando cookies para sessão do usuário
 			setcookie("id", $id);
 			setcookie("email", $email);
+			header("Location: index.php");
 		}
 
 	}
