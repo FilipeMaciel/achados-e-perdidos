@@ -54,5 +54,22 @@
         $item = new Item();
         $return = $item->update($id,$nome_item,$nome_pessoa,$local,$descricao,$data,$aimage,$status);
 		echo "Atualizado";
+			header("Location: ../index.php");	
+		
+
+	}
+	if (isset($_POST["devolver"])) {
+		$nome = $_POST["name"];
+		$identificacao = $_POST["ident"];
+		$telefone = $_POST["telefone"];
+		$email = $_POST["email"];
+		$data = date("Y-m-d h:i:s");
+		$id= $_POST["id"];;
+		$status=1;
+
+		$devolver = new Item();
+		$return = $devolver->devolver($nome,$data,$email,$identificacao,$telefone,$id,$status);
+		echo "Devolvido";
+		header("Location: ../index.php");
 	}
  ?>

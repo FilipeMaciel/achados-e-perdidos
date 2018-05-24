@@ -97,10 +97,42 @@
         $banco->commit();
         }
         catch(PDOException $e) {
-        echo $e->getMessage();
+           echo $e->getMessage();
         }
     } 
 
+    public function devolver($nome,$data,$email,$identificacao,$telefone,$id,$status){
+        try{
+            $banco = new PDO("mysql:host=localhost;dbname=achados", "root", "");
+
+            $banco->beginTransaction();
+
+            $prepare=$banco->prepare("INSERT INTO devolucao(nome,data_devolucao,email,identificacao,telefone,id_intens) VALUES (:nome,:data_devolucao,:email,:ident,:telefone,:id_intens)");
+            $prepare->bindValue(':nome',$nome,PDO::PARAM_STR);
+            $prepare->bindValue(':data_devolucao',$data,PDO::PARAM_STR);
+            $prepare->bindValue(':email',$email,PDO::PARAM_STR);
+            $prepare->bindValue(':ident',$identificacao,PDO::PARAM_STR);
+            $prepare->bindValue(':telefone',$telefone,PDO::PARAM_STR);
+            $prepare->bindValue(':id_intens',$id,PDO::PARAM_STR);
+            $prepare->execute();
+            if (!$prepare) {
+                die('ERROR!'.$prepare);
+            }
+
+            $sql=$banco->prepare("UPDATE intens SET status=:status WHERE id=:id");
+            $sql->bindValue(':id',$id,PDO::PARAM_STR);
+            $sql->bindValue(':status',$status,PDO::PARAM_STR);
+            $sql->execute();
+            if (!$sql) {
+                die('ERROR!'.$sql);
+            }
+
+            $banco->commit();
+
+        }catch(PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
 }
 
  ?>
