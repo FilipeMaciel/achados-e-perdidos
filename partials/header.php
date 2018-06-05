@@ -6,9 +6,8 @@
       include "partials/menu.php"
     ?>
 
-    
-           
-     
+  <div class="row">     
+     <div class="col l3 m6 s12">
               <div id="slider">
                   <a href="#" id="prev">  </a>
                   <a href="#" id="next">  </a>
@@ -19,9 +18,8 @@
                       <li class="three"></li>
                   </ul>
               </div>
-
-
-
+    </div>
+  </div>
               <a class="btn-floating btn-large waves-effect waves-light green" href="itens/cadastro.php"><i class="material-icons">add</i></a>
-
+    
 </header>

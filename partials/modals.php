@@ -2,7 +2,7 @@
          <div class="conteiner-modal">
             <div class="modal-header">
                 <div class="conteiner-modalheader modal-logar">
-                     <form class=" black-text" method="POST" action="login.php"> 
+                     <form id="formLogin" class="formLogin black-text" method="POST" action="login.php"> 
                         <div  class="formConfig">
 
                           <div class="input-field col s12">
@@ -12,6 +12,7 @@
                           <div class="input-field col s12">
                              <label for="senha">Senha</label>
                              <input type="password" name="senha" id="senha"><br>
+
                           </div>
                            
                              <input type="submit" name="login" value="Logar" class="waves-effect waves-light btn cursor" >
@@ -26,12 +27,13 @@
                 <div class="conteiner-modalheader modal-cadastrar">
               <!-- Formulário para cadastro -->
 
-                    <form method="POST" action="cadastro.php"> 
+                    <form id="formCadastro" method="POST" action="cadastro.php" style="background-color: #000;"> 
                          <div  class="formConfig">     
                               Nome:<input type="text" name="nome"><br>
                               Email:<input type="text" name="email"><br>
-                              Senha:<input type="password" name="senha"><br>
-                              Telefone:<input type="text" name="telefone" ><br>
+                              Senha:<input type="password" name="senha" id="senha2"><br>
+                              Repita a senha:<input type="password" name="senha2"><br>
+                              Telefone:<input type="text" name="telefone" id="tel" ><br>
                               Tipo:<input type="number" name="tipo" max=1 min=0 ><br>
                               <input type="submit" name=cadastrar value="cadastrar" class="waves-effect waves-light btn cursor">
                              <label class="fechar">X</label>

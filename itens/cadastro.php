@@ -5,38 +5,73 @@
 <!DOCTYPE html>
 
 <html>
-
- <?php
+<?php
    include "../partials/head.php";
  ?>
-<body >
- 
- <?php
-   include "../partials/menu.php";
- ?>
+<body>
+       
+		  <div class=" row">
+		    <form enctype="multipart/form-data" class="formItem col s12" method="POST" action="cadastroi.php">
+		      <div class="row">
+		      	
+		      	<div class="input-field col s12">
+		          <input id="nome" type="text" name="nome" class="validate">
+		          <label for="nome">Nome do Item</label>
+		        </div>
 
-<form enctype="multipart/form-data" method="POST" action="cadastroi.php">
-	Nome do item:<input type="text" name="nome"><br>
-	Quem encontrou:<input type="text" name="nome_pessoa"><br>
-	Local:<input type="text" name="local"><br>
-	Descrição:<input type="text" name="descricao"><br>
-	<select name="categorias">
-		<option disabled selected>Categoria</option>
-		<?php
-			$categorias = Crud::findAllCategoria();
+		        <div class="input-field col s12">
+		    			<select name="categorias">
+							<option disabled selected>Categoria</option>
+									<?php
+										$categorias = Crud::findAllCategoria();
 
-			foreach ($categorias as $cat):
-				
-		?>
-		<option value="<?php echo $cat->id ?>" ><?php echo $cat->nome?> </option>
-		<?php
-			endforeach;
-		?>	
-	</select>
-		
-	Imagem:<input type="file" name="userfile" placeholder="imagem"><br>
-	<input type="submit" name="cadastro" value="Casdastrar item">
+										foreach ($categorias as $cat):
+											
+									?>
+							<option value="<?php echo $cat->id ?>" ><?php echo $cat->nome?> </option>
+									<?php
+										endforeach;
+									?>	
+						</select>
+		    			<label>Categoria</label>
+  				</div>
+                
+                <div class="input-field col s12">
+		          <input id="encontrou" type="text" name="nome_pessoa" class="validate">
+		          <label for="encontrou">Quem encontrou?</label>
+		        </div>
+                
+                <div class="input-field col s12">
+		          <input id="local" type="text" name="local" class="validate">
+		          <label for="local">Local encontrado?</label>
+		        </div>
 
-</form>
+		        <div class="input-field col s12">
+		          <input id="descricao" type="text" name="descricao" class="validate">
+		          <label for="descricao">Descrição</label>
+		        </div>
+
+		      </div>
+		        
+			   <div class="row">
+			   	<div class="file-field input-field ">
+				      <div class="btn">
+					        <span>Selecionar Imagem</span>
+					        <input type="file" name="userfile" placeholder="imagem">
+					  </div>
+					  <div class="file-path-wrapper">
+					        <input class="file-path validate" type="text" placeholder="Clique e selecione uma imagem do item">
+				      </div>
+				    </div>
+			   </div>
+		        
+				     <button class="btn waves-effect waves-light" type="submit" name="action cadastro">
+		   			<i class="material-icons right">add_box</i> Cadatrar Item 
+		  			</button>
+			</form>
+
+
+	</div>
+		 
 </body>
 </html>
