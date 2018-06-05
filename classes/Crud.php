@@ -35,8 +35,9 @@ abstract class Crud extends DB{
         return $prepare->fetch();
     }
     public static function findAllItens(){
-        $sql = "SELECT * FROM intens";
+        $sql = "SELECT * FROM intens WHERE status=:status";
         $prepare = DB::prepare($sql);
+        $prepare->bindValue(':status',0,PDO::PARAM_STR);
         $prepare->execute();
         return $prepare->fetchAll();
     }
@@ -53,5 +54,12 @@ abstract class Crud extends DB{
         $prepare->execute();
         return $prepare->fetchAll();
     }
-
+    public static function findAllDevolucao(){
+        $sql = "SELECT * FROM intens WHERE status = :status";
+        $prepare = DB::prepare($sql);
+        $prepare->bindValue(':status', 1, PDO::PARAM_STR);
+        $prepare->execute();
+        return $prepare->fetchAll();
+    }
+ 
 }

@@ -31,6 +31,7 @@ $(function(){
                       $("input[type=text][name=local]").val(data.local_encontrado);
                       $("input[type=text][name=descricao]").val(data.descricao);
                       $("input[type=text][name=nome_item]").val(data.nome_item);
+                      $("input[type=hidden][name=id]").val(data.id);
                       $("<img class='img-modal' src='upload/"+data.imagem+"'>").appendTo(".cont-image-update");
                   },
                   error: function (data) {

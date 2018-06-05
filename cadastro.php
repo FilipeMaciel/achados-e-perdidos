@@ -30,7 +30,8 @@ require_once "classes/DB.php";
                 //$user = new Usuario($nome, $email, $senha, $telefone, $tipo);
 
 				if($resp = $user->insert($nome, $email, $senha, $telefone, $tipo)){
-                    echo "Conta registrada, inicie sessão...";
+					header("Location: index.php");	
+
                 }else{
 				    var_dump($resp);
 				    echo "Falha ao inserir dados";
