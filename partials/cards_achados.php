@@ -1,7 +1,6 @@
-        
 
             
-        <div class="col l3 m6 s12 card">
+        <div class="offset-l1 col l3 m6 s12  card">
                 <div class="card-image waves-effect waves-block waves-light">
                   <img class="activator" src="upload/<?php echo $row->imagem ?>">
                 </div>

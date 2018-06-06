@@ -65,7 +65,7 @@
 				    </div>
 			   </div>
 		        
-				     <button class="btn waves-effect waves-light" type="submit" name="action cadastro">
+				     <button class="btn waves-effect waves-light" type="submit" name="cadastro">
 		   			<i class="material-icons right">add_box</i> Cadatrar Item 
 		  			</button>
 			</form>
