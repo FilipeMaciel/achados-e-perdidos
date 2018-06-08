@@ -1,6 +1,6 @@
 
 <?php  
-	include_once $_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/classes/Crud.php";
+	include_once $_SERVER['DOCUMENT_ROOT']."../achados-e-perdidos/classes/Crud.php";
  ?>
 <!DOCTYPE html>
 
@@ -9,8 +9,11 @@
    include "../partials/head.php";
  ?>
 <body>
+
+
+
 		  <div class=" row">
-		    <form enctype="multipart/form-data" class="formItem col s12" method="POST" action="cadastroi.php" id="formCadItem" style="background-color: #000;">
+		    <form enctype="multipart/form-data" class="formItem col s12" method="POST" action="cadastroi.php" id="formCadItem" >
 		      <div class="row">
 		      	
 		      	<div class="input-field col s12">

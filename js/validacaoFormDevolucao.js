@@ -13,7 +13,7 @@ $(document).ready(function(){
 
 			ident:{
 				required: true,
-				minlength: 14
+				minlength: 14,
 				maxlength: 14
 			},
 
@@ -35,7 +35,7 @@ $(document).ready(function(){
 
 			ident:{
 				required: "Este campo é obrigatório!",
-				minlength: "A matrícula deve conter  14 caracteres"
+				minlength: "A matrícula deve conter  14 caracteres",
 				maxlength: "A matrícula deve conter apenas 14 caracteres"
 			},
 

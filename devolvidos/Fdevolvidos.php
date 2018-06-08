@@ -1,9 +1,13 @@
+
+<?php
+include_once $_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/classes/Crud.php";
+?>
 <!DOCTYPE html>
+
 <html>
-<head>
-	<meta charset="utf-8">
-	<title></title>
-</head>
+<?php
+include $_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/partials/head.php";
+?>
 <body>
 <form action="../itens/cadastroi.php" method="POST" id="formDevolucao">
 	<input type="hidden" name="id" value= "<?php echo $_GET["id"] ?>">

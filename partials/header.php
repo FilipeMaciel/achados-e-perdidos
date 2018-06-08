@@ -3,7 +3,7 @@
     <label for='bt_menu'>&#9776;</label>
     
     <?php
-      include "partials/menu.php"
+      include "menu.php"
     ?>
 
       <div class="row">
