@@ -34,7 +34,6 @@
     </div>
 <div class="row">
     <?php
-        //if(isset($_COOKIE["id"])){
             $itens = Item::findAllItens();
             foreach ($itens as $row):
 
@@ -49,7 +48,6 @@
     </div>
 <div class="row">
     <?php
-        //if(isset($_COOKIE["id"])){
             $dev = Item::findAllDevolucao();
             foreach ($dev as $row):
                 
