@@ -8,14 +8,13 @@
                   <span class="card-title activator grey-text text-darken-4"><?php echo $row->nome_item;  ?><i class="material-icons right">more_vert</i></span>
                     <input type="hidden" class="id-card" value="<?php echo $row->id ?>">
                 </div>
+                <?php if(isset($_COOKIE["tipo"]) && $_COOKIE["tipo"] == 1): ?>
                 <div class="card-action">
-                  <?php if($_COOKIE["tipo"] == 1 ): ?>
                         <?php echo '<a href="index.php?action=delete&id=' . $row->id.'">Excluir</a>' ?>
                         <?php echo '<a href="devolvidos/Fdevolvidos.php?action=devolver&id=' . $row->id.'">Devolver</a>' ?>
-                        <a href="#" class="botaoAtualizar modal-atualizar">Atualizar</a>
-                  <?php endif ?>
-
+                        <a href="#" class="botaoAtualizar modal-atualizar">Atualizar</a>        
                 </div>
+                <?php endif; ?>
                 <div class="card-reveal">
                   <span class="card-title grey-text text-darken-4"><?php echo $row->nome_item;  ?>
                       <i class="material-icons right">close</i>
