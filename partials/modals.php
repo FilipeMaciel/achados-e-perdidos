@@ -52,7 +52,7 @@
               <div class="conteiner-update">
                      <!-- Formulário para cadastro -->
                       <div class="formConfig modal-update">
-                         <form enctype="multipart/form-data" method="POST" action="itens/cadastroi.php">
+                         <form id="formUpdate" enctype="multipart/form-data" method="POST" action="itens/cadastroi.php">
                            <div class="input-field col s12">
                             <label for="first_name">Nome do item:</label>
                               <input type="text" name="nome" value=""><br>

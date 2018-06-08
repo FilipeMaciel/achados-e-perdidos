@@ -9,9 +9,8 @@
    include "../partials/head.php";
  ?>
 <body>
-       
 		  <div class=" row">
-		    <form enctype="multipart/form-data" class="formItem col s12" method="POST" action="cadastroi.php">
+		    <form enctype="multipart/form-data" class="formItem col s12" method="POST" action="cadastroi.php" id="formCadItem" style="background-color: #000;">
 		      <div class="row">
 		      	
 		      	<div class="input-field col s12">
@@ -60,7 +59,7 @@
 					        <input type="file" name="userfile" placeholder="imagem">
 					  </div>
 					  <div class="file-path-wrapper">
-					        <input class="file-path validate" type="text" placeholder="Clique e selecione uma imagem do item">
+					        <input class="file-path validate" type="text" placeholder="Clique e selecione uma imagem do item"  name="imagemSelecionar">
 				      </div>
 				    </div>
 			   </div>
@@ -71,7 +70,6 @@
 			</form>
 
 
-	</div>
-		 
+	</div>	 
 </body>
 </html>

@@ -2,56 +2,28 @@
 $(document).ready(function(){
 	console.log("Entrou");
 
-	 $('#tel').mask('(00) 0 0000-0000');
-
-	$('#formLogin').validate({
-		rules:{
-			email:{
-			  required: true,
-			  email: true	
-			},
-			senha:{
-				required: true,
-				rangelength: [6,15]
-
-			}
-			
-		},
-		messages:{
-			email:{
-			  required: "Este campo é obrigatório",
-			  email: "E-mail inválido"	
-			},
-			senha:{
-				required: "Este campo é obrigatório",
-				rangelength: "A senha é entre 6 e 15 caracteres"
-
-			}
-		}
-
-	});
-
+	$('#tel').mask('(00) 0 0000-0000');
 
 	$('#formCadastro').validate({
 
 		rules:{
 			nome:{
-  				required: "Este campo é obrigatório",
+  				required: true,
   				minlength: 6
   			},
 
 			email:{
-			  required: "Este campo é obrigatório",
+			  required: true,
 			  email: true
 			},
 
 			senha:{
-  				required: "Este campo é obrigatório",
+  				required: true,
   				rangelength: [6,15]
   			},
 
   			senha2:{
-  				required: "Este campo é obrigatório",
+  				required: true,
   				equalTo: "#senha2"
   			},
 
@@ -84,7 +56,6 @@ $(document).ready(function(){
   				minlength: "Quantidade de caracteres invalida"
   			}
 		}
-	});
-
+	});	
 
 });
