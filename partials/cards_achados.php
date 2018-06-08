@@ -1,7 +1,6 @@
-        
 
             
-        <div class="col l3 m6 s12 card">
+        <div class="offset-l1 col l3 m6 s12  card">
                 <div class="card-image waves-effect waves-block waves-light">
                   <img class="activator" src="upload/<?php echo $row->imagem ?>">
                 </div>
@@ -10,9 +9,11 @@
                     <input type="hidden" class="id-card" value="<?php echo $row->id ?>">
                 </div>
                 <div class="card-action">
+                  <?php if($_COOKIE["tipo"] == 1 ): ?>
                         <?php echo '<a href="index.php?action=delete&id=' . $row->id.'">Excluir</a>' ?>
                         <?php echo '<a href="devolvidos/Fdevolvidos.php?action=devolver&id=' . $row->id.'">Devolver</a>' ?>
                         <a href="#" class="botaoAtualizar modal-atualizar">Atualizar</a>
+                  <?php endif ?>
 
                 </div>
                 <div class="card-reveal">

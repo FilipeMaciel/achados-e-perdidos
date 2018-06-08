@@ -5,6 +5,7 @@
 	if(isset($_POST["login"])){
 		$email=$_POST["email"];
 		$senha=$_POST["senha"];
+
 		$ver="SELECT * FROM usuarios WHERE  email=:email AND senha=:senha";
 		
 		$slc=$conn->prepare($ver);
@@ -17,11 +18,13 @@
 			echo "Não está cadastrado...";			
 		}else{
 
-			$id=$slc->fetchObject();
-			$id = $id->id;
+			$dado=$slc->fetchObject();
+			$id = $dado->id;
+			$tipo=$dado->tipo;
 			#criando cookies para sessão do usuário
 			setcookie("id", $id);
 			setcookie("email", $email);
+			setcookie("tipo",$tipo);
 			header("Location: index.php");
 		}
 
