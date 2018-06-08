@@ -20,7 +20,6 @@
      <script type="text/javascript" src="js/slider.js" async></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
      
 
     <script type="text/javascript" src="./js/validacaoFormLogin.js"></script>
@@ -30,9 +29,7 @@
     <script type="text/javascript" src="./js/validacaoFormUpdate.js"></script>
 
 
-=======
     <script type="text/javascript" src="./js/validacao.js"></script>
->>>>>>> 10e1e1d7d1948bb8e44b0dd3388e39490d206b76
 
          
 
