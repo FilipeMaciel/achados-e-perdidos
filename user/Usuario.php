@@ -5,8 +5,6 @@ class Usuario extends Crud{
     #Atributos da classe
     private $nome, $email, $senha, $telefone, $tipo;
 
-
-   
     public function insert($nome, $email, $senha, $telefone, $tipo){
         try{
             $sql = "INSERT INTO $this->table (nome, email, senha, telefone, tipo) VALUES (:nome, :email, :senha, :telefone, :tipo)";
@@ -37,7 +35,7 @@ class Usuario extends Crud{
 
     #este método é abstrato na classe pai, logo é forçada a implementação do mesmo na classe filho
     public function delete($id){
-        $slq = "DELETE FROM $this->table WHERE id = :id";
+        $slq = "DELETE FROM usuarios WHERE id = :id";
         $prepare = DB::prepare($slq);
         $prepare->bindValue(':id', $id, PDO::PARAM_INT);
         return $prepare->execute();

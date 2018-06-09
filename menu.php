@@ -15,7 +15,7 @@
                 <a href="#" class="logar iconMenu">Categorias</a>
             </li>
             <li>
-                <a href="#" class="cadastrar iconMenu">Usuários</a>
+                <a href="user/user.php" class="cadastrar iconMenu">Usuários</a>
             </li>
         <?php endif; ?>
             
