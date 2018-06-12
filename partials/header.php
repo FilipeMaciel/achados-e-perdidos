@@ -7,7 +7,7 @@
     ?>
 
       <div class="row">
-          <div id="slider">
+          <div id="slider" class="s12 m12 l12">
               <a href="#" id="prev">  </a>
               <a href="#" id="next">  </a>
 
