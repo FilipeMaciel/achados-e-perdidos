@@ -1,7 +1,7 @@
     <nav class="menu">
         <ul>
         <!-- QUANDO O USUÁRIO LOGAR, É NECESSÁRIO ESCONDER ESTE MENU -->
-        <?php if(empty($_COOKIE["id"]) == true): ?>
+        <?php if(empty($_COOKIE["id"])): ?>
             <li>
                 <a href="#" class="logar iconMenu">Logar</a>
             </li>
@@ -15,7 +15,7 @@
                 <a href="#" class="logar iconMenu">Categorias</a>
             </li>
             <li>
-                <a href="../user/user.php" class="cadastrar iconMenu">Usuários</a>
+                <a href="#" class="cadastrar iconMenu">Usuários</a>
             </li>
         <?php endif; ?>
             
