@@ -39,5 +39,26 @@ require_once "classes/DB.php";
 
 			}
 		}
+
+		if (isset($_POST["atualizar"])) {
+			$id=($_POST["id"]);
+			$nome=($_POST["nome"]);
+			$email=($_POST["email"]);
+			$senha=($_POST["senha"]);
+			$telefone=($_POST["telefone"]);
+			$tipo=($_POST["tipo"]);
+
+            $user = new Usuario();
+			
+			$user->update($id,$nome, $email, $senha, $telefone, $tipo);
+					header("Location: user/user.php");	
+
+            }else{
+				    var_dump($resp);
+				    echo "Falha ao inserir dados";
+                }
+
+			
+		
 ?>
 		
