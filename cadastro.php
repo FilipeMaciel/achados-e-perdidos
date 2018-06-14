@@ -53,6 +53,7 @@ require_once "classes/DB.php";
 			$user->update($id,$nome, $email, $senha, $telefone, $tipo);
 					header("Location: user/user.php");	
 
+
             }else{
 				    var_dump($resp);
 				    echo "Falha ao inserir dados";

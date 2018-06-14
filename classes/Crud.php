@@ -61,5 +61,12 @@ abstract class Crud extends DB{
         $prepare->execute();
         return $prepare->fetchAll();
     }
+    public static function findAllFiltro($categoria){
+        $sql = "SELECT * FROM intens_has_categorias WHERE categoria = :categoria";
+        $prepare = DB::prepare($sql);
+        $prepare->bindValue(':categoria', $categoria, PDO::PARAM_STR);
+        $prepare->execute();
+        return $prepare->fetchAll();
+    }
  
 }
