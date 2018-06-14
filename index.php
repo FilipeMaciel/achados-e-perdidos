@@ -32,30 +32,101 @@
     <div class="row">
         <h3 style=" text-align: center;">ITENS PERDIDOS</h3>
     </div>
-<div class="row">
-    <?php
-            $itens = Item::findAllItens();
-            foreach ($itens as $row):
+    <div class="row">
+        <?php
+          
+            try{
+                $conn = new PDO("mysql:host=localhost;dbname=achados", "root", "");
+            }catch(PDOException $e){
+                echo $e->getMessage();
+            }
+            $pagina = (!isset($_GET['pagina']))? 1 : $_GET['pagina'];
 
-                include "partials/cards_achados.php";
+            $sqlExec = $conn->prepare("SELECT * FROM intens");
+            $sqlExec->execute();
+            $result = $sqlExec->fetchAll();
+            
+            $exibir = 6;
 
-            endforeach;
+            $total = ceil((count($result)/$exibir)) ;
+
+            $inicioExibir = ($exibir*$pagina) - $exibir;
+
+
+            $sqlExec1 = $conn->prepare("SELECT * FROM intens limit $inicioExibir, $exibir");
+            $sqlExec1->execute();
+            $result1 = $sqlExec1->fetchAll();
+
+            if($sqlExec->rowCount() > 0 ){
+            
+               foreach ($result1 as $row):
+                    
+                    include "partials/cards_achados.php";
+
+                endforeach;
          
+        ?>
+    </div>
+        <?php 
+
+        for($i = 1; $i <= $total; $i++ ){
+
+            if($i == $pagina){
+                echo '['.$i.']';
+            }else{
+            echo ' <a href="?pagina='.$i.'">['.$i.']</a> ';
+            }
+        }
+    }
     ?>
- </div>
     <div class="row">
         <h3 style=" text-align: center;">CASOS RESOLVIDOS</h3>
     </div>
-<div class="row">
-    <?php
-            $dev = Item::findAllDevolucao();
-            foreach ($dev as $row):
-                
-                include "partials/cards_achados.php";
+    <div class="row">
+        <?php
+           
+            try{
+                $conn = new PDO("mysql:host=localhost;dbname=achados", "root", "");
+            }catch(PDOException $e){
+                echo $e->getMessage();
+            }
+            $pagina = (!isset($_GET['pagina']))? 1 : $_GET['pagina'];
 
-            endforeach;
-         
+            $sqlExec = $conn->prepare("SELECT * FROM intens WHERE status=1");
+            $sqlExec->execute();
+            $result = $sqlExec->fetchAll();
+            
+            $exibir = 6;
+
+            $total = ceil((count($result)/$exibir)) ;
+
+            $inicioExibir = ($exibir*$pagina) - $exibir;
+
+
+            $sqlExec1 = $conn->prepare("SELECT * FROM intens WHERE status=1 limit $inicioExibir, $exibir");
+            $sqlExec1->execute();
+            $result1 = $sqlExec1->fetchAll();
+
+            if($sqlExec->rowCount() > 0 ){
+          
+               foreach ($result1 as $row):
+                    
+                    include "partials/cards_achados.php";
+
+                endforeach;
+            ?>
+    </div>
+        <?php 
+
+        for($i = 1; $i <= $total; $i++ ){
+
+            if($i == $pagina){
+                echo '['.$i.']';
+            }else{
+            echo ' <a href="?pagina='.$i.'">['.$i.']</a> ';
+            }
+        }
+    }
     ?>
- </div>
 </body>
 </html>
