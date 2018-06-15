@@ -1,4 +1,4 @@
-$(function(){
+/* $(function(){
 	var i = 0;
 	function slide(element, tamanhoP, qtd, i){
 		if(i > qtd){
@@ -63,3 +63,4 @@ $(function(){
 
 	effect('slider', 10000);
 });
+*/

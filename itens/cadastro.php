@@ -5,14 +5,18 @@
 <!DOCTYPE html>
 
 <html>
-<?php
-   include "../partials/head.php";
- ?>
+    <?php
+       include "../partials/head.php";
+     ?>
 <body>
 
 
+<?php
+include "../partials/header.php";
+?>
 
-		  <div class=" row">
+
+<div class=" row">
 		    <form enctype="multipart/form-data" class="formItem col s12" method="POST" action="cadastroi.php" id="formCadItem" >
 		      <div class="row">
 		      	
