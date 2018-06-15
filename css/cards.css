@@ -1,14 +1,77 @@
 @charset "UTF-8";
 .card{
+	position: relative;
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+
+.section-title{
+	height: 10vh;
+	display: flex;
+
 
 }
+
+.text-bold{
+	font-weight: 800;
+}
+
+.title-larger{
+	text-align: center;
+	display: flex;
+	margin: auto auto;
+}
+.conteiner-title{
+	display: flex;
+	margin: auto auto;
+	flex-direction: column;
+
+}
+.conteiner-title:after{
+	content: "";
+	width: 150px;
+	height: 2.5px;
+	background-color: #ffffff;
+	text-align: center;
+	display: flex;
+	margin: auto auto;
+}
+
+.section-encontrados{
+	background-color: #1A3C40;
+}
+.section-resolvidos{
+	background-color: #97ecc5;
+}
+
+.section-cards{
+	width: 100%;
+	height: 80vh;
+}
+
 .tamanho{
 	width: 50px;
 	height: 50px;
 	border: 20px;
 }
 .card-image{
-	width: 150px;
+	height: 250px;
+}
+.card-image img {
+	position: relative;
+	width: auto;
+	height: auto;
+}
+.card-texto{
+	background-color: rgba(26,60,64,.8);
+	position: absolute;
+	top: 70%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.card-texto div {
+	margin: 0 20px;
 }
 .activator{
 	width: 100%;
