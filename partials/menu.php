@@ -18,6 +18,12 @@
                 <a href="#" class="cadastrar iconMenu">Usuários</a>
             </li>
         <?php endif; ?>
+        <?php if(isset($_COOKIE["id"])): ?>
+            <li>
+                <a href="" >Sair</a>
+            </li>
+
+        <?php endif;?>
             
         <!-- FIM -->
         </ul>

@@ -45,7 +45,6 @@
             $sqlExec = $conn->prepare("SELECT * FROM intens");
             $sqlExec->execute();
             $result = $sqlExec->fetchAll();
-            
             $exibir = 6;
 
             $total = ceil((count($result)/$exibir)) ;
