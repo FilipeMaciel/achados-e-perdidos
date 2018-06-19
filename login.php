@@ -1,6 +1,7 @@
 
 <?php 
 	include("classes/DB.php");
+	include("classes/models/Sistemalogin.class.php");
 	$conn= new DB();
 	if(isset($_POST["login"])){
 		$email=$_POST["email"];
@@ -15,16 +16,15 @@
 		$slc->execute();
 
 		if ($slc->rowCount() == 0) {
-			echo "Não está cadastrado...";			
+			echo "Tente Novamente";			
 		}else{
-
 			$dado=$slc->fetchObject();
 			$id = $dado->id;
 			$tipo=$dado->tipo;
-			#criando cookies para sessão do usuário
-			setcookie("id", $id);
-			setcookie("email", $email);
-			setcookie("tipo",$tipo);
+			
+			$SL = new SistemaLogin();
+			$SL->criarCookies($id,$email,$tipo);
+
 			header("Location: index.php");
 		}
 

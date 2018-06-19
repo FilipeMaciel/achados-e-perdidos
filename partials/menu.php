@@ -20,7 +20,7 @@
         <?php endif; ?>
         <?php if(isset($_COOKIE["id"])): ?>
             <li>
-                <a href="" >Sair</a>
+                <a href="partials/desconectar.php" >Sair</a>
             </li>
 
         <?php endif;?>
