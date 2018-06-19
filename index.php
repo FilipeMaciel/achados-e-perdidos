@@ -96,7 +96,7 @@
             }catch(PDOException $e){
                 echo $e->getMessage();
             }
-            $pagina = (!isset($_GET['pagina']))? 1 : $_GET['pagina'];
+            $pagina = (!isset($_GET['paginadev']))? 1 : $_GET['paginadev'];
 
             $sqlExec = $conn->prepare("SELECT * FROM intens WHERE status=1");
             $sqlExec->execute();
@@ -129,7 +129,7 @@
             if($i == $pagina){
                 echo '['.$i.']';
             }else{
-            echo ' <a href="?pagina='.$i.'">['.$i.']</a> ';
+            echo ' <a href="?paginadev='.$i.'">['.$i.']</a> ';
             }
         }
     }
