@@ -29,9 +29,12 @@
 
 
 <!--    LISTAGEM DE ITEM     -->
-    <div class="row">
-        <h3 style=" text-align: center;">ITENS PERDIDOS</h3>
-    </div>
+    <section class="section-cards section-encontrados">
+        <div class="row section-title">
+            <div class="conteiner-title">
+                <h1 class="title-larger">Itens  <span class="text-bold"> Perdidos</span> </h1>
+            </div>
+        </div>
     <div class="row">
         <?php
           
@@ -78,9 +81,13 @@
         }
     }
     ?>
-    <div class="row">
-        <h3 style=" text-align: center;">CASOS RESOLVIDOS</h3>
-    </div>
+    </section>
+    <section class="section-cards section-resolvidos">
+        <div class="row section-title">
+            <div class="conteiner-title">
+                <h1 class="title-larger"> <span class="text-bold">Casos </span>   Resolvidos</h1>
+            </div>
+        </div>
     <div class="row">
         <?php
            
@@ -126,6 +133,6 @@
             }
         }
     }
-    ?>
+    ?></section>
 </body>
 </html>
