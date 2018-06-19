@@ -2,34 +2,44 @@
             
         <div class="col l3 m6 s12  card">
 
-                <div class="card-image waves-effect waves-block waves-light">
+           <div class="card-conteiner">
+               <div class="card-image">
                   <img class="activator"  src="upload/<?php echo $row[7] ?>">
                 </div>
 
+                <div class="card-action edit-delet">
+                    <?php echo '<a href="index.php?action=delete&id=' . $row[0].'">Excluir</a>' ?>
+                    <a href="#" class="botaoAtualizar modal-atualizar">Atualizar</a>
+                </div>
+
                 <div class="card-texto">
-                    <div class="card-content">
-                      <span class="card-title activator grey-text text-darken-4"><?php echo $row[1];  ?>
-                      <i class="material-icons right">more_vert</i></span>
-                        <input type="hidden" class="id-card" value="<?php echo $row[0] ?>">
-                    </div>
 
                     <?php if(isset($_COOKIE["tipo"]) && $_COOKIE["tipo"] == 1): ?>
-                    <div class="card-action">
-                            <?php echo '<a href="index.php?action=delete&id=' . $row[0].'">Excluir</a>' ?>
-                            <?php echo '<a href="devolvidos/Fdevolvidos.php?action=devolver&id=' . $row[0].'">Devolver</a>' ?>
-                            <a href="#" class="botaoAtualizar modal-atualizar">Atualizar</a>
-                    </div>
+
                     <?php endif; ?>
 
-                    <div class="">
-                      <span class="card-title grey-text text-darken-4"><?php echo $row[1];  ?>
-                          <i class="material-icons right">close</i>
-                      </span>
-                        <p>Descrição: <?php echo $row[4] ?></p>
-                        <p>Local Encontrado: <?php echo $row[3] ?></p>
-                        <p>Data: <?php echo $row[5] ?></p>
+                    <div class="info">
+                        <span class="name-item"> <?php echo $row[1];  ?> </span>
 
+                        <div class="card-date">
+                            <p class="card-text-encontrado">Local Encontrado:sdfhgsjkdfgksjdfgsdfjg <?php echo $row[3] ?></p>
+                            <p class="card-date-position"><?php
+                                echo $data = $row[5];
+                                //echo $timeStamp = date( "d/m/Y", strtotime($data));
+                                //echo date_format($data, 'd/m/Y');  ?></p>
+                        </div>
                     </div>
-
+                    <div class="info-complete">
+                        <p>Descrição: <?php echo $row[4] ?></p>
+                        <p>Data: <?php echo $row[5] ?></p>
+                    </div>
+                    <div class="container-btn-card">
+                        <?php echo '
+                            <a class="btn-devolver" href="devolvidos/Fdevolvidos.php?action=devolver&id=' . $row[0].'">
+                                <span > Resgatar </span>
+                            </a>
+                        ' ?>
+                    </div>
                 </div>
+           </div>
         </div>

@@ -14,9 +14,10 @@
     <link rel="stylesheet" type="text/css" href="./css/slider.css">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
-     <script type="text/javascript" src="js/modalcards.js"></script>
+     <script type="text/javascript" src="/js/modalcards.js"></script>
       <script type="text/javascript" src="js/funcaoMenu.js"></script>
      <script type="text/javascript" src="js/slider.js" async></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
