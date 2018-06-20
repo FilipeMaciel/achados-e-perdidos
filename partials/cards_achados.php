@@ -22,16 +22,19 @@
                         <span class="name-item"> <?php echo $row[1];  ?> </span>
 
                         <div class="card-date">
-                            <p class="card-text-encontrado">Local Encontrado:sdfhgsjkdfgksjdfgsdfjg <?php echo $row[3] ?></p>
+                            <p class="card-text-encontrado">Local Encontrado: <?php echo $row[3] ?></p>
                             <p class="card-date-position"><?php
                                 echo $data = $row[5];
                                 //echo $timeStamp = date( "d/m/Y", strtotime($data));
                                 //echo date_format($data, 'd/m/Y');  ?></p>
                         </div>
+
+
                     </div>
                     <div class="info-complete">
                         <p>Descrição: <?php echo $row[4] ?></p>
-                        <p>Data: <?php echo $row[5] ?></p>
+                        <p class="card-text-encontrado">Local Encontrado:<?php echo $row[3] ?></p>
+
                     </div>
                     <div class="container-btn-card">
                         <?php echo '
@@ -39,7 +42,10 @@
                                 <span > Resgatar </span>
                             </a>
                         ' ?>
+
+
                     </div>
+                    <p class="date"><?php echo $data = $row[5]; ?></p>
                 </div>
            </div>
         </div>

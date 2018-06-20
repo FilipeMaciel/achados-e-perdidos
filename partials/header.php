@@ -13,7 +13,7 @@
                         <h1>Menos dor de cabeça para encontrar <br> seus pertences perdidos</h1>
                     </div>
                     <div>
-                        <span id="btn-header"> Ver Itens</span>
+                        <a href=""><span id="btn-header"> Ver Itens</span></a>
                     </div>
                 </div>
           </div>

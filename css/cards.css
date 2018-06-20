@@ -17,6 +17,17 @@
 
 }
 
+
+.color-name-casos{
+	color: #1A3C40;
+}
+
+.color-name-resolvidos{
+	color: black;
+}
+
+
+
 .text-bold{
 	font-weight: 800;
 }
@@ -42,16 +53,26 @@
 	margin: auto auto;
 }
 
+.conteiner-title-resolvidos:after{
+	content: "";
+	width: 150px;
+	height: 2.5px;
+	background-color: #666666;
+	text-align: center;
+	display: flex;
+	margin: auto auto;
+}
+
 .section-encontrados{
 	background-color: #1A3C40;
 }
 .section-resolvidos{
-	background-color: #97ecc5;
+	background-color: #dcedc2;
 }
 
 .section-cards{
 	width: 100%;
-	height: 80vh;
+	min-height: 80vh;
 }
 
 .tamanho{
@@ -91,7 +112,15 @@
 .info-complete{
 	display: none;
 	flex-direction: column;
+	display: flex;
+	margin: 20px;
+	font-size: 15px;
 }
+
+.card-texto:hover .card-date{
+	display: none;
+}
+
 .card-texto:hover  .info-complete {
 	display: flex;
 }
@@ -104,10 +133,21 @@
 	display: flex;
 }
 
+.date{
+	display: flex;
+	margin: auto 20px 20px auto;
+	font-size: 13px;
+	font-weight: bold;
+	flex-direction: column;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
 .btn-devolver{
 	border: 2px solid #ffffff;
 	position: relative;
-	padding: 5px 30px;
+	padding: 5px 40px;
 	border-radius: 4px;
 	display: flex;
 	margin: auto auto;

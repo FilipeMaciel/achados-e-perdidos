@@ -70,7 +70,7 @@
         ?>
     </div>
         <?php 
-
+    //for paginacao
         for($i = 1; $i <= $total; $i++ ){
 
             if($i == $pagina){
@@ -84,8 +84,8 @@
     </section>
     <section class="section-cards section-resolvidos">
         <div class="row section-title">
-            <div class="conteiner-title">
-                <h1 class="title-larger"> <span class="text-bold">Casos </span>   Resolvidos</h1>
+            <div class="conteiner-title-resolvidos">
+                <h1 class="title-larger color-name-resolvidos"> <span class="text-bold color-name-casos ">Casos </span>   Resolvidos</h1>
             </div>
         </div>
     <div class="row">
