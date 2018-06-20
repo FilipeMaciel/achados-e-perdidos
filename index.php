@@ -37,15 +37,12 @@
         </div>
     <div class="row">
         <?php
-          
-            try{
-                $conn = new PDO("mysql:host=localhost;dbname=achados", "root", "");
-            }catch(PDOException $e){
-                echo $e->getMessage();
-            }
+
+            
             $pagina = (!isset($_GET['pagina']))? 1 : $_GET['pagina'];
 
-            $sqlExec = $conn->prepare("SELECT * FROM intens");
+
+            $sqlExec = DB::prepare("SELECT * FROM intens");
             $sqlExec->execute();
             $result = $sqlExec->fetchAll();
             $exibir = 6;
@@ -55,14 +52,12 @@
             $inicioExibir = ($exibir*$pagina) - $exibir;
 
 
-            $sqlExec1 = $conn->prepare("SELECT * FROM intens limit $inicioExibir, $exibir");
+            $sqlExec1 = DB::prepare("SELECT * FROM intens limit $inicioExibir, $exibir");
             $sqlExec1->execute();
             $result1 = $sqlExec1->fetchAll();
-
             if($sqlExec->rowCount() > 0 ){
             
                foreach ($result1 as $row):
-                    
                     include "partials/cards_achados.php";
 
                 endforeach;
@@ -91,17 +86,12 @@
     <div class="row">
         <?php
            
-            try{
-                $conn = new PDO("mysql:host=localhost;dbname=achados", "root", "");
-            }catch(PDOException $e){
-                echo $e->getMessage();
-            }
+           
             $pagina = (!isset($_GET['paginadev']))? 1 : $_GET['paginadev'];
 
-            $sqlExec = $conn->prepare("SELECT * FROM intens WHERE status=1");
+            $sqlExec =  DB::prepare("SELECT * FROM intens WHERE status=1");
             $sqlExec->execute();
             $result = $sqlExec->fetchAll();
-            
             $exibir = 6;
 
             $total = ceil((count($result)/$exibir)) ;
@@ -109,7 +99,7 @@
             $inicioExibir = ($exibir*$pagina) - $exibir;
 
 
-            $sqlExec1 = $conn->prepare("SELECT * FROM intens WHERE status=1 limit $inicioExibir, $exibir");
+            $sqlExec1 =  DB::prepare("SELECT * FROM intens WHERE status=1 limit $inicioExibir, $exibir");
             $sqlExec1->execute();
             $result1 = $sqlExec1->fetchAll();
 
@@ -129,7 +119,7 @@
             if($i == $pagina){
                 echo '['.$i.']';
             }else{
-            echo ' <a href="?paginadev='.$i.'">['.$i.']</a> ';
+            echo ' <a href="?pagina='.$i.'">['.$i.']</a> ';
             }
         }
     }

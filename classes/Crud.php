@@ -41,6 +41,26 @@ abstract class Crud extends DB{
         $prepare->execute();
         return $prepare->fetchAll();
     }
+    public static function allItens(){
+        $sql = "SELECT * FROM intens where id=1 ";
+        $prepare = DB::prepare($sql);
+        $prepare->execute();
+        return $prepare->rowCount(); 
+    }
+    public static function limitItens($i,$f){
+        $sqlExec1 = "SELECT * FROM intens limit :inicio, :exibir";
+        $prepare = DB::prepare($sqlExec1);
+        $prepare->bindValue(':inicio', $i, PDO::PARAM_STR);
+        $prepare->bindValue(':exibir', $f, PDO::PARAM_STR);
+        $prepare->execute();
+        return $prepare->fetchAll();
+    }
+    public static function findAllItensC(){
+        $sql = "SELECT * FROM intens ";
+        $prepare = DB::prepare($sql);
+        $prepare->execute();
+        return $prepare->fetchAll();
+    }
     public static function findCategoria($id){
         $sql = "SELECT * FROM categorias WHERE id = :id";
         $prepare = DB::prepare($sql);
