@@ -35,7 +35,7 @@ class Usuario extends Crud{
 
     #este método é abstrato na classe pai, logo é forçada a implementação do mesmo na classe filho
     public function delete($id){
-        $slq = "DELETE FROM usuarios WHERE id = :id";
+        $slq = "DELETE FROM $this->table WHERE id = :id";
         $prepare = DB::prepare($slq);
         $prepare->bindValue(':id', $id, PDO::PARAM_INT);
         return $prepare->execute();
