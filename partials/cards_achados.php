@@ -46,7 +46,7 @@
 
 
                     </div>
-                    <p class="date"><?php echo $data = $row[5]; ?></p>
+                    <p class="date"><?php echo $data = $row->data_encontrado; ?></p>
                 </div>
            </div>
         </div>
