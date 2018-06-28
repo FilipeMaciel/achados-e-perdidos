@@ -31,8 +31,8 @@
 <!--    LISTAGEM DE ITEM     -->
     <section class="section-cards section-encontrados">
         <div class="row section-title">
-            <div class="conteiner-title">
-                <h1 class="title-larger">Itens  <span class="text-bold"> Perdidos</span> </h1>
+            <div class="conteiner-title conteiner-title-achados">
+                <h1 class="title-larger">Itens  <span class="text-bold"> &nbsp Perdidos</span> </h1>
             </div>
         </div>
     <div class="row">
@@ -45,7 +45,7 @@
             $sqlExec = DB::prepare("SELECT * FROM intens");
             $sqlExec->execute();
             $result = $sqlExec->fetchAll();
-            $exibir = 6;
+            $exibir = 8;
 
             $total = ceil((count($result)/$exibir)) ;
 
@@ -64,39 +64,46 @@
          
         ?>
     </div>
-        <?php 
-    //for paginacao
-        for($i = 1; $i <= $total; $i++ ){
 
-            if($i == $pagina){
-                echo '['.$i.']';
-            }else{
-            echo ' <a href="?pagina='.$i.'">['.$i.']</a> ';
-            }
-        }
-    }
-    ?>
+        <div class="paginacao-container">
+            <div class="paginacao-elementos">
+
+                <a class="prox-ant" href=""> < </a>
+
+                        <?php
+                        for($i = 1; $i <= $total; $i++ ){
+
+                                    echo '<a href="?pagina='.$i.'" class="paginacao-style">'.$i.'</a> ';
+
+                        }
+                    }
+                    ?>
+                <a class="prox-ant" href=""> > </a>
+
+            </div>
+        </div>
+
     </section>
     <section class="section-cards section-resolvidos">
         <div class="row section-title">
-            <div class="conteiner-title-resolvidos">
-                <h1 class="title-larger color-name-resolvidos"> <span class="text-bold color-name-casos ">Casos </span>   Resolvidos</h1>
+            <div class="conteiner-title conteiner-title-resolvidos">
+                <h1 class="title-larger color-name-resolvidos"> <span class="text-bold color-name-casos ">Casos </span> &nbsp Resolvidos</h1>
             </div>
         </div>
     <div class="row">
         <?php
            
            
-            $pagina = (!isset($_GET['paginadev']))? 1 : $_GET['paginadev'];
+            $paginadev = (!isset($_GET['paginadev']))? 1 : $_GET['paginadev'];
 
             $sqlExec =  DB::prepare("SELECT * FROM intens WHERE status=1");
             $sqlExec->execute();
             $result = $sqlExec->fetchAll();
-            $exibir = 6;
+            $exibir = 8;
 
             $total = ceil((count($result)/$exibir)) ;
 
-            $inicioExibir = ($exibir*$pagina) - $exibir;
+            $inicioExibir = ($exibir*$paginadev) - $exibir;
 
 
             $sqlExec1 =  DB::prepare("SELECT * FROM intens WHERE status=1 limit $inicioExibir, $exibir");
@@ -112,17 +119,30 @@
                 endforeach;
             ?>
     </div>
-        <?php 
 
-        for($i = 1; $i <= $total; $i++ ){
+        <div class="paginacao-container">
+            <div class="paginacao-elementos">
+                <a class="prox-ant-res" href=""> < </a>
+                        <?php
 
-            if($i == $pagina){
-                echo '['.$i.']';
-            }else{
-            echo ' <a href="?pagina='.$i.'">['.$i.']</a> ';
-            }
-        }
-    }
-    ?></section>
+                        for($id = 1; $id <= $total; $id++ ){
+
+                            if($id == $paginadev){
+                                echo ' <a href="#" class="paginacao-dev">'.$id.'</a> ';
+                            }else{
+                            echo ' <a href="?paginacao='.$id.'">'.$id.'</a> ';
+                            }
+                        }
+                    }
+                    ?>
+                <a class="prox-ant-res" href=""> > </a>
+            </div>
+        </div>
+
+    </section>
+    <footer class="rodape">
+
+    </footer>
+
 </body>
 </html>

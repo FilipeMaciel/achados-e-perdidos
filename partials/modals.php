@@ -1,51 +1,95 @@
 <div class="bg-modal"></div>
-         <div class="conteiner-modal">
-            <div class="modal-header">
-                <div class="conteiner-modalheader modal-logar">
-                     <form id="formLogin" class="formLogin black-text" method="POST" action="login.php"> 
-                        <div  class="formConfig">
-
+         <div class="conteiner-modal row">
+            <div class="modal-header modal-logar">
+                     <form id="formLogin"  method="POST" action="login.php">
+                         <div  class="modal">
                           <div class="input-field col s12">
-                             <label for="email">Email</label>
-                             <input type="text" name="email" width="100%" id="email"><br>
+                              <p class="title"> Achados e Perdidos <br> IFG <br></p>
+                             <input type="text" name="email" width="100%" id="email" class="campo" placeholder="E-mail:"><br>
                           </div>
                           <div class="input-field col s12">
-                             <label for="senha">Senha</label>
-                             <input type="password" name="senha" id="senha"><br>
+                             <input type="password" name="senha" id="senha" class="campo" placeholder="Senha:"><br>
 
                           </div>
                            
-                             <input type="submit" name="login" value="Logar" class="waves-effect waves-light btn cursor" >
-                             <label class="fechar">X</label>
+                             <input type="submit" name="login" value="ENTRAR" class="botao" >
+                            <!-- <label class="fechar">X</label> -->
                          </div>
                      </form>
-                </div>     
           </div>
 
 
-            <div class="modal-header">
-                <div class="conteiner-modalheader modal-cadastrar">
-              <!-- Formulário para cadastro -->
-
-                    <form id="formCadastro" method="POST" action="cadastro.php" style="background-color: #000;"> 
-                         <div  class="formConfig">     
-                              Nome:<input type="text" name="nome"><br>
-                              Email:<input type="text" name="email"><br>
-                              Senha:<input type="password" name="senha" id="senha2"><br>
-                              Repita a senha:<input type="password" name="senha2"><br>
-                              Telefone:<input type="text" name="telefone" id="tel" ><br>
-                              Tipo:<input type="number" name="tipo" max=1 min=0 ><br>
-                              <input type="submit" name=cadastrar value="cadastrar" class="waves-effect waves-light btn cursor">
-                             <label class="fechar">X</label>
-
+                <div class="modal-header col l6 offset-l3 m8 offset-m2 s10 offset-s1 modal-cadastrar">
+                    <form id="formCadastro" method="POST" action="cadastro.php" style="background-color: #000;">
+                         <div  class="modal">
+                             <p class="title"> Cadastro de Usuários <br></p>
+                              <input type="text" name="nome" class="campo" placeholder="Nome:"><br>
+                              <input type="text" name="email" class="campo" placeholder="E-mail:"><br>
+                              <input type="password" name="senha" id="senha2" class="campo" placeholder="Senha: "><br>
+                              <input type="password" name="senha2" class="campo" placeholder="Digite a senha novamente: "><br>
+                              <input type="text" name="telefone" id="tel" class="campo" placeholder="Telefone: "><br>
+                              <input type="number" name="tipo" max=1 min=0 class="campo" placeholder="Tipo de usuário"><br>
+                              <input type="submit" name=cadastrar value="cadastrar" class="botao">
                          </div>
-
                      </form>
                 </div>
-           </div>
+
+                <div class="modal-header modal-categoria">
+                     <form action="cadastroCategoria.php" method="POST">
+                         <div  class="modal">
+                             <p class="title">Inserir Categoria</p>
+                             <input type="text" name="nome" class="campo" placeholder="Insira o nome da nova categoria"><br>
+                             <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
+                             <input  class="botao" type="submit" name="cadastro" value="Cadastrar">
+                         </div>
+                     </form>
+                 </div>
 
 
-          </div>
+             <div class="modal-header modal-itens">
+                     <form enctype="multipart/form-data"  method="POST" action="cadastroi.php" id="formCadItem" >
+                             <div class="modal">
+                                 <p class="title">Registrar Item Perdido</p>
+                                 <input id="nome" type="text" name="nome" class="validate campo" placeholder="Insira o nome do Item">
+
+                                    <div class="position-select">
+                                        <div class="select-style">
+                                            <select name="categorias">
+                                                <option disabled selected><u> Selecione a categoria </u> </option>
+                                                 <?php
+                                                 $categorias = Crud::findAllCategoria();
+
+                                                 foreach ($categorias as $cat):
+
+                                                     ?>
+                                                     <option value="<?php echo $cat->id ?>" ><?php echo $cat->nome?> </option>
+                                                 <?php
+                                                 endforeach;
+                                                 ?>
+                                             </select>
+                                        </div>
+                                     </div>
+                                         <input id="encontrou" type="text" name="nome_pessoa" class="validate campo" placeholder="Quem encontrou?">
+                                         <input id="local" type="text" name="local" class="validate campo" placeholder="Local encontrado">
+                                         <input id="descricao" type="text" name="descricao" class="validate campo" placeholder="Descrição">
+                                         <div class="file-field input-field ">
+
+
+                                                    <label for="btn-img" class="botao-img">Selecionar um arquivo </label>
+                                                    <input id="btn-img" type="file" name="userfile" placeholder="imagem" class="botao-img">
+
+
+
+                                         </div>""
+                                         <button class="botao" type="submit" name="cadastro">
+                                             Cadatrar Item
+                                         </button>
+                             </div>
+                     </form>
+                  </div>
+         </div>
+
+
 
           
         <div class="bg-modal-card"></div>
@@ -65,12 +109,12 @@
                                       $categorias = Crud::findAllCategoria();
 
                                       foreach ($categorias as $cat):
-                                        
+
                                     ?>
                                         <option value="<?php echo $cat->id ?>" ><?php echo $cat->nome?> </option>
                                     <?php
                                       endforeach;
-                                    ?>  
+                                    ?>
                                     </select>
                                     <label>Categoria</label>
                                 </div>
@@ -93,6 +137,6 @@
                               <label class="fechar">X</label>
                           </form>    
                      </div>             
-              </div>  
+              </div>
 
 

@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.rodape{
+    width: 100%;
+    min-height: 20vh;
+    margin: auto auto;
+    background-color: #1A3C40;
+
+}

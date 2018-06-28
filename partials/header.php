@@ -20,8 +20,8 @@
 
     <!-- SOMENTE USUÁRIOS CADASTRADOS E LOGADOS PODERÃO VER ESTE BOTÃO -->
     <?php if(isset($_COOKIE["id"])): ?>
-          <a class="btn-floating-header" href="itens/cadastro.php">
-              <i class="material-icons">add</i>
+          <a class="btn-floating-header itens" href="#" >
+              <i class="material-icons itens-style">add</i>
           </a>
     <?php endif; ?>
     

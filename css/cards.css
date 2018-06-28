@@ -14,18 +14,7 @@
 .section-title{
 	height: 10vh;
 	display: flex;
-
 }
-
-
-.color-name-casos{
-	color: #1A3C40;
-}
-
-.color-name-resolvidos{
-	color: black;
-}
-
 
 
 .text-bold{
@@ -34,16 +23,18 @@
 
 .title-larger{
 	text-align: center;
-	display: flex;
 	margin: auto auto;
+	display: flex;
+
 }
+
 .conteiner-title{
 	display: flex;
 	margin: auto auto;
 	flex-direction: column;
 
 }
-.conteiner-title:after{
+.conteiner-title-achados:after{
 	content: "";
 	width: 150px;
 	height: 2.5px;
@@ -56,23 +47,36 @@
 .conteiner-title-resolvidos:after{
 	content: "";
 	width: 150px;
-	height: 2.5px;
+	height: 3px;
 	background-color: #666666;
 	text-align: center;
 	display: flex;
 	margin: auto auto;
+
 }
+
+.color-name-casos{
+	color: #1A3C40;
+}
+
+.color-name-resolvidos{
+	color: #000000;
+}
+
 
 .section-encontrados{
 	background-color: #1A3C40;
 }
 .section-resolvidos{
 	background-color: #dcedc2;
+
 }
 
 .section-cards{
 	width: 100%;
-	min-height: 80vh;
+	min-height: auto;
+	margin: auto auto;
+
 }
 
 .tamanho{
@@ -155,6 +159,8 @@
 
 .btn-devolver:hover{
 	transition: all 0.2s;
+	background-color: #ffffff;
+	color: #1A3C40;
 	font-weight: bold;
 }
 
@@ -184,5 +190,68 @@
 	top: 0;
 	right: 0;
 }
+
+.paginacao-container{
+	width: 100%;
+	display: flex;
+
+}
+
+.paginacao-elementos{
+	text-align: center;
+	margin: auto auto 15px auto;
+	display: flex;
+
+}
+
+.paginacao-style{
+	border: 2px solid #ffffff;
+	margin: 5px;
+	border-radius: 5px;
+	padding: 5px 10px;
+
+}
+
+.paginacao-style:hover{
+	background-color: #ffffff;
+	color: #1A3C40;
+	font-weight: bold;
+	transition: all 0.3s;
+	cursor: pointer;
+}
+
+.paginacao-dev{
+	border: 2px solid #666666;
+	margin: 5px;
+	border-radius: 5px;
+	padding: 5px 10px;
+	color: #1A3C40;
+}
+
+.paginacao-dev:hover{
+	background-color: #666666;
+	color: #ffffff;
+	font-weight: bold;
+	transition: all 0.3s;
+	cursor: pointer;
+}
+
+
+
+
+.prox-ant{
+	margin: 5px;
+	padding: 5px 10px;
+
+}
+
+.prox-ant-res{
+	margin: 5px;
+	padding: 5px 10px;
+	color: #1A3C40;
+}
+
+
+
 
 

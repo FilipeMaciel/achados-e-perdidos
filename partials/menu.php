@@ -11,16 +11,17 @@
 
         <!-- ESTE MENU SOMENTE SERÁ MOSTRADO PARA USUÁRIOS LOGADOS -->
         <?php if(isset($_COOKIE["id"]) && $_COOKIE["tipo"] == 1): ?>
+
             <li>
-                <a href="#" class="logar iconMenu">Categorias</a>
+                <a href="#" class="iconMenu categoria"> Categorias </a>
             </li>
             <li>
-                <a href="#" class="cadastrar iconMenu">Usuários</a>
+                <a href="#" class="iconMenu cadastrar ">Usuários</a>
             </li>
         <?php endif; ?>
         <?php if(isset($_COOKIE["id"])): ?>
             <li>
-                <a href="partials/desconectar.php" >Sair</a>
+                <a href="partials/desconectar.php" class="iconMenu cadastrar ">Sair</a>
             </li>
 
         <?php endif;?>

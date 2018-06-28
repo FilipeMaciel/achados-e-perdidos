@@ -47,15 +47,16 @@ header{
 	align-content: center;
 	align-items: center;
 	display: flex;
-;
+
+
 }
 .menu ul li a{
 	display: flex;
 	text-align: center;
-	padding: 0 10px;
 	color: #ffffff;
 	margin: auto auto;
-	}
+	flex-direction: column;
+}
 
 .menu label{
 	display: block;
@@ -64,10 +65,18 @@ header{
 	background-color: #2E8B57;
 	color: #fff;
 }
+.iconMenu:after{
+	content: "";
+	width: 0;
+	height: 2px;
+	background-color: #ffffff;
+	border-radius: 1px;
+	transition: all .4s;
+	margin: 1px auto;
+}
 
-.iconMenu:hover{
-	background-color: #fff;
-	color: #555;
+.iconMenu:hover:after{
+	width: 100px;
 }
 
 label[for="bt_menu"]{

@@ -40,7 +40,7 @@
                     <div class="container-btn-card">
                         <?php echo '
                             <a class="btn-devolver" href="devolvidos/Fdevolvidos.php?action=devolver&id=' . $row->id.'">
-                                <span > Resgatar </span>
+                                Resgatar 
                             </a>
                         ' ?>
 
