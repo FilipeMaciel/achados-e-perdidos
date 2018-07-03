@@ -1,6 +1,6 @@
 <div class="bg-modal"></div>
          <div class="conteiner-modal row">
-            <div class="modal-header modal-logar">
+            <div class="modal-header modal-logar col l6 offset-l3 m8 offset-m2 s10 offset-s1">
                      <form id="formLogin"  method="POST" action="login.php">
                          <div  class="modal">
                           <div class="input-field col s12">
@@ -34,7 +34,7 @@
                      </form>
                 </div>
 
-                <div class="modal-header modal-categoria">
+                <div class="modal-header modal-categoria col l6 offset-l3 m8 offset-m2 s10 offset-s1">
                      <form action="cadastroCategoria.php" method="POST">
                          <div  class="modal">
                              <p class="title">Inserir Categoria</p>
@@ -46,7 +46,7 @@
                  </div>
 
 
-             <div class="modal-header modal-itens">
+             <div class="modal-header modal-itens col l6 offset-l3 m8 offset-m2 s10 offset-s1">
                      <form enctype="multipart/form-data"  method="POST" action="cadastroi.php" id="formCadItem" >
                              <div class="modal">
                                  <p class="title">Registrar Item Perdido</p>
@@ -87,56 +87,54 @@
                              </div>
                      </form>
                   </div>
+
+             <div class="modal-header modal-atualizar col l6 offset-l3 m8 offset-m2 s10 offset-s1">
+                     <form id="formCadItem"  enctype="multipart/form-data" method="POST" action="../itens/cadastroi.php">
+                         <div  class="modal">
+                             <span class="title"> Atualizar Item </span>
+
+                             <input type="text" name="nome" class="campo" value="" placeholder="Nome do Item"><br>
+                             <div class="position-select">
+                                 <div class="select-style">
+                                     <select name="categorias">
+                                         <option value="" disabled selected>Categoria</option>
+                                         <?php
+                                         $categorias = Crud::findAllCategoria();
+
+                                         foreach ($categorias as $cat):
+
+                                             ?>
+                                             <option value="<?php echo $cat->id ?>" ><?php echo $cat->nome?> </option>
+                                         <?php
+                                         endforeach;
+                                         ?>
+                                     </select>
+                                 </div>
+                             </div>
+
+                         <input type="text" name="nome_pessoa" value="" class="campo" placeholder="Quem encontrou:"><br>
+
+                         <input type="text" name="local" value="" class="campo" placeholder="Local:"><br>
+
+                         <input type="text" name="descricao" value="" class="campo" placeholder="Descrição:"><br>
+
+                             <div class="cont-image-update">
+
+                             </div>
+
+                         <input type="file" name="userfile" placeholder="imagem" value="" class="botao-img"><br>
+
+                         <input type="hidden" name="id" value="">
+
+                         <input type="submit" name="update" value="Altualizar" class="botao">
+
+                         </div>
+                     </form>
+             </div>
          </div>
 
 
 
-          
-        <div class="bg-modal-card"></div>
 
-              <div class="conteiner-update">
-                     <!-- Formulário para cadastro -->
-                      <div class="formConfig modal-update">
-                         <form id="formUpdate" enctype="multipart/form-data" method="POST" action="itens/cadastroi.php">
-                           <div class="input-field col s12">
-                            <label for="first_name">Nome do item:</label>
-                              <input type="text" name="nome" value=""><br>
-                            </div>
-                               <div class="input-field col s12">
-                                    <select name="categorias">
-                                      <option value="" disabled selected>Categoria</option>
-                                      <?php
-                                      $categorias = Crud::findAllCategoria();
-
-                                      foreach ($categorias as $cat):
-
-                                    ?>
-                                        <option value="<?php echo $cat->id ?>" ><?php echo $cat->nome?> </option>
-                                    <?php
-                                      endforeach;
-                                    ?>
-                                    </select>
-                                    <label>Categoria</label>
-                                </div>
-                              
-                              Quem encontrou:<input type="text" name="nome_pessoa" value=""><br>
-                              
-                              Local:<input type="text" name="local" value=""><br>
-                              
-                              Descrição:<input type="text" name="descricao" value=""><br>
-                                  <div class="cont-image-update">
-                                        
-                                  </div>
-                                  
-                              <input type="file" name="userfile" placeholder="imagem" value=""><br>
-                              
-                              <input type="hidden" name="id" value="">
-
-                              <input type="submit" name="update" value="Altualizar">
-
-                              <label class="fechar">X</label>
-                          </form>    
-                     </div>             
-              </div>
 
 

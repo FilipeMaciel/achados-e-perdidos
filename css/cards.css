@@ -158,7 +158,7 @@
 }
 
 .btn-devolver:hover{
-	transition: all 0.2s;
+	transition: all 0.3s;
 	background-color: #ffffff;
 	color: #1A3C40;
 	font-weight: bold;

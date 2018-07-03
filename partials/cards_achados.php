@@ -9,7 +9,7 @@
             <?php if(isset($_COOKIE["tipo"]) && $_COOKIE["tipo"] == 1): ?>
                 <div class="card-action edit-delet">
                     <?php echo '<a href="index.php?action=delete&id=' . $row->id.'">Excluir</a>' ?>
-                    <a href="#" class="botaoAtualizar modal-atualizar">Atualizar</a>
+                    <a href="#" class="botaoAtualizar">Atualizar</a>
                 </div>
 
             <?php endif; ?>

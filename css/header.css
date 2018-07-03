@@ -82,11 +82,12 @@ h1{
     padding: 15px;
     font-weight: bold;
     box-shadow: 1px 2px 6px #000000;
-
+    cursor: pointer;
 }
 
 .itens-style:hover{
     background-color: #ffffff;
     color: #1A3C40;
+    transition: all .6s;
 
 }

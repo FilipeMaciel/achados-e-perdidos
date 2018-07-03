@@ -4,12 +4,9 @@ $(function(){
      var fundo = $('.bg-modal')
      var modalCadastrar = $('.modal-cadastrar');
      var modalLogar = $('.modal-logar');
-     var modalUpdate = $('.modal-update');
-     var bgModalUpdate = $('.bg-modal-card');
-     var modalUpdate = $('.conteiner-update');
+     var modalUpdate = $('.modal-atualizar');
      var modalCategoria = $('.modal-categoria');
      var modalItens = $('.modal-itens');
-
 
 
      $('.logar').click(function(event) {
@@ -19,7 +16,6 @@ $(function(){
      	modalCadastrar.hide();
      	modalUpdate.hide();
      	modalCategoria.hide();
-
 
      });
 
@@ -45,6 +41,18 @@ $(function(){
         modalItens.hide();
     });
 
+
+    $('.botaoAtualizar').click(function (event) {
+        modalUpdate.show('slow');
+        fundo.show();
+        modalBg.show();
+        modalLogar.hide();
+        modalCadastrar.hide();
+        modalItens.hide();
+        modalCategoria.hide();
+    });
+
+
     $('.itens').click(function (event) {
         modalItens.show('slow');
         fundo.show();
@@ -56,17 +64,18 @@ $(function(){
     });
 
 
+
      $('.bg-modal').click(function(event) {
      	modalBg.hide();	
      	modalLogar.hide();
      	modalCadastrar.hide();
-     	modalUpdate.hide();
-     	bgModalUpdate.hide();
      	modalUpdate.hide();
      	fundo.hide();
      	modalCategoria.hide();
      	modalItens.hide();
 
      });
+
+
 
 });

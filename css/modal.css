@@ -86,7 +86,7 @@ input[type='file'] {
 }
 
 .select-style select{
-	width: 250px;
+	width: 200px;
 	font-size: 15px;
 	background-color: #1A3C40;
 	cursor: pointer;
@@ -166,16 +166,6 @@ form .fechar:hover{
 	background-color: #2E8B57;
 }
 
-.conteiner-update{
-	width: 100%;
-	height: 100vh;
-	margin: auto auto;
-	position: absolute;
-	padding: 50px;
-	margin-top: 20vh;
-	display: none;
-	z-index: 92;
-}
 .modal-header{
 	width: 100%;
 	margin: auto auto;

@@ -29,7 +29,7 @@
 
 
 <!--    LISTAGEM DE ITEM     -->
-    <section class="section-cards section-encontrados">
+    <section class="section-cards section-encontrados" id="itens_achados">
         <div class="row section-title">
             <div class="conteiner-title conteiner-title-achados">
                 <h1 class="title-larger">Itens  <span class="text-bold"> &nbsp Perdidos</span> </h1>
@@ -144,5 +144,7 @@
 
     </footer>
 
+    // Copyright © Víctor Gonçalves dos Santos | @victur01
+    // Ana Lívia Pereira Silva | @liviaana46
 </body>
 </html>

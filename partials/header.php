@@ -13,14 +13,14 @@
                         <h1>Menos dor de cabeça para encontrar <br> seus pertences perdidos</h1>
                     </div>
                     <div>
-                        <a href=""><span id="btn-header"> Ver Itens</span></a>
+                        <a href="#itens_achados"><span id="btn-header"> Ver Itens</span></a>
                     </div>
                 </div>
           </div>
 
     <!-- SOMENTE USUÁRIOS CADASTRADOS E LOGADOS PODERÃO VER ESTE BOTÃO -->
     <?php if(isset($_COOKIE["id"])): ?>
-          <a class="btn-floating-header itens" href="#" >
+          <a class="btn-floating-header itens">
               <i class="material-icons itens-style">add</i>
           </a>
     <?php endif; ?>
