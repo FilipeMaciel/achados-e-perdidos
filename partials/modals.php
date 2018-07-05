@@ -35,11 +35,11 @@
                 </div>
 
                 <div class="modal-header modal-categoria col l6 offset-l3 m8 offset-m2 s10 offset-s1">
-                     <form action="cadastroCategoria.php" method="POST">
+                     <form action="categoria/cadastroCategoria.php" method="POST">
                          <div  class="modal">
                              <p class="title">Inserir Categoria</p>
                              <input type="text" name="nome" class="campo" placeholder="Insira o nome da nova categoria"><br>
-                             <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
+                             <input type="hidden" name="id" value="">
                              <input  class="botao" type="submit" name="cadastro" value="Cadastrar">
                          </div>
                      </form>
