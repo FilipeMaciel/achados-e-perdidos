@@ -140,11 +140,27 @@
         </div>
 
     </section>
-    <footer class="rodape">
+    <footer class="rodape row ">
+        <div class="container-conteudo ">
+            <h3 class="sobre col  l2 s4">
+                Software desenvolvido como <br>
+                atividade de estágio dos alunos de <br>
+                Curso Integrado em Informática 2016/2018
+            </h3>
 
+            <h2 class="copyright col l2 s4">
+               <p> Copyright © IFG - Campus Uruaçu</p>
+            </h2>
+
+            <h2 class="governo col l2 s4">
+                <p>GOVERNO <br>
+                FEDERAL</p>
+            </h2>
+
+        </div>
     </footer>
 
-    // Copyright © Víctor Gonçalves dos Santos | @victur01
-    // Ana Lívia Pereira Silva | @liviaana46
+    <!-- Copyright © Víctor Gonçalves dos Santos | @victur01
+         Ana Lívia Pereira Silva | @liviaana46 -->
 </body>
 </html>

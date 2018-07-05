@@ -38,11 +38,16 @@
                         <p>Data: <?php echo $row->data_encontrado; ?></p>
                     </div>
                     <div class="container-btn-card">
-                        <?php echo '
+                        <?php
+                        //colocar if
+                        echo '
                             <a class="btn-devolver" href="devolvidos/Fdevolvidos.php?action=devolver&id=' . $row->id.'">
                                 Resgatar 
                             </a>
-                        ' ?>
+                        '
+
+
+                        ?>
 
 
                     </div>
