@@ -25,10 +25,10 @@
                         <div class="card-date">
 
                             <p class="card-text-encontrado">Local Encontrado: <?php echo $row->local_encontrado ?></p>
+                        
                             <p class="card-date-position"><?php
-                                echo $data = $row->data_encontrado;
-                                //echo $timeStamp = date( "d/m/Y", strtotime($data));
-                                //echo date_format($data, 'd/m/Y');  ?></p>
+                                $data = $row->data_encontrado;
+                                echo date('d/m/Y', strtotime($data));  ?></p>
                         </div>
 
 
@@ -36,7 +36,6 @@
                     <div class="info-complete">
 
                         <p>Descrição: <?php echo $row->descricao ?></p>
-                        <p>Data: <?php echo $row->data_encontrado; ?></p>
                     </div>
 
                     <?php if (isset($_COOKIE["id"]) && $row->status == 0): ?>
@@ -50,10 +49,12 @@
                             ' ?>
 
                         </div>
-                        
+
                     <?php endif ?>
                    
-                    <p class="date"><?php echo $data = $row->data_encontrado; ?></p>
+                    <p class="date"><?php $data = $row->data_encontrado;
+                    echo date('d/m/Y', strtotime($data)); 
+                     ?></p>
                 </div>
            </div>
         </div>
