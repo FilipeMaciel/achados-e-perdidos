@@ -38,8 +38,9 @@
                         <p>Descrição: <?php echo $row->descricao ?></p>
                         <p>Data: <?php echo $row->data_encontrado; ?></p>
                     </div>
+
                     <?php if (isset($_COOKIE["id"]) && $row->status == 0): ?>
-                   
+
                         <div class="container-btn-card">
                             <?php 
                             echo '
@@ -49,9 +50,8 @@
                             ' ?>
 
                         </div>
-                    
+                        
                     <?php endif ?>
-                    
                    
                     <p class="date"><?php echo $data = $row->data_encontrado; ?></p>
                 </div>

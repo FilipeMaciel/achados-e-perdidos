@@ -124,3 +124,14 @@ label[for="bt_menu"]{
 	}
 
 }
+@media(max-width: 640px){
+	h1{
+		font-size: 30px!important;
+	}
+	h2{
+		font-size: 15px!important;
+	}
+	h3{
+		font-size: 10px!important;
+	}
+}
