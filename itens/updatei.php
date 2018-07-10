@@ -15,10 +15,4 @@ include_once $_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/classes/Crud.php";
 		echo json_encode($itens);
 	}
 
-
-
-
-
-
-
 ?>

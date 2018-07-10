@@ -13,8 +13,7 @@
 	    <td colspan="2">Ações</td>
 	</tr>
 <?php 
-include "../classes/models/Usuario.php";
-
+    include "../classes/models/Usuario.php";
     $usuario = Usuario::findAll();
     foreach ($usuario as $row):
 ?>
@@ -33,19 +32,15 @@ include "../classes/models/Usuario.php";
     	</table>   
 </html>
 <?php
-
-if (isset($_GET['action']) && $_GET['action'] =='delete'){
     $user = new Usuario();
-    $user->delete($_GET['id']);
-    header("Location: user.php");
-}  
-if (isset($_GET['action']) && $_GET['action'] =='atualizar'){
-	$user = new Usuario();
-    $user->update($id, $nome, $email, $senha, $telefone, $tipo);
-} 
-if (isset($_GET['action']) && $_GET['action'] =='inserir'){
-    $user = new Usuario();
-    $user->insert($nome, $email, $senha, $telefone, $tipo);
-} 
-
+    if (isset($_GET['action']) && $_GET['action'] =='delete'){
+        $user->delete($_GET['id']);
+        header("Location: user.php");
+    }  
+    if (isset($_GET['action']) && $_GET['action'] =='atualizar'){
+        $user->update($id, $nome, $email, $senha, $telefone, $tipo);
+    } 
+    if (isset($_GET['action']) && $_GET['action'] =='inserir'){
+        $user->insert($nome, $email, $senha, $telefone, $tipo);
+    } 
  ?>

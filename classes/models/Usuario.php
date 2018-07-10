@@ -22,23 +22,33 @@ class Usuario extends Crud{
 
     #este método é abstrato na classe pai, logo é forçada a implementação do mesmo na classe filho
     public function update($id, $nome, $email, $senha, $telefone, $tipo){
-        $sql = "UPDATE $this->table SET nome = :nome, email = :email, senha = :senha, telefone = :telefone, tipo = :tipo WHERE id = :id ";
-        $prepare = DB::prepare($sql);
-        $prepare->bindValue(':nome', $nome, PDO::PARAM_STR);
-        $prepare->bindValue(':email', $email, PDO::PARAM_STR);
-        $prepare->bindValue(':senha', $senha, PDO::PARAM_STR);
-        $prepare->bindValue(':telefone', $telefone, PDO::PARAM_STR);
-        $prepare->bindValue(':tipo', $tipo, PDO::PARAM_INT);
-        $prepare->bindValue(':id', $id, PDO::PARAM_INT);
-        return $prepare->execute();
+        try{
+            $sql = "UPDATE $this->table SET nome = :nome, email = :email, senha = :senha, telefone = :telefone, tipo = :tipo WHERE id = :id ";
+            $prepare = DB::prepare($sql);
+            $prepare->bindValue(':nome', $nome, PDO::PARAM_STR);
+            $prepare->bindValue(':email', $email, PDO::PARAM_STR);
+            $prepare->bindValue(':senha', $senha, PDO::PARAM_STR);
+            $prepare->bindValue(':telefone', $telefone, PDO::PARAM_STR);
+            $prepare->bindValue(':tipo', $tipo, PDO::PARAM_INT);
+            $prepare->bindValue(':id', $id, PDO::PARAM_INT);
+            return $prepare->execute();
+        }
+        catch(PDOException $e) {
+            header("Location: /error.php");
+        }
     }
 
     #este método é abstrato na classe pai, logo é forçada a implementação do mesmo na classe filho
     public function delete($id){
+        try{
         $slq = "DELETE FROM $this->table WHERE id = :id";
         $prepare = DB::prepare($slq);
         $prepare->bindValue(':id', $id, PDO::PARAM_INT);
         return $prepare->execute();
+        }
+        catch(PDOException $e) {
+            header("Location: /error.php");
+        }
     }
 
 }

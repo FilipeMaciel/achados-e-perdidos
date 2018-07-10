@@ -16,12 +16,12 @@
                 <a href="#" class="iconMenu categoria"> Categorias </a>
             </li>
             <li>
-                <a href="#" class="iconMenu cadastrar ">Usuários</a>
+                <a href="#" class="iconMenu cadastrar ">Cadastrar Usuários</a>
             </li>
         <?php endif; ?>
         <?php if(isset($_COOKIE["id"])): ?>
             <li>
-                <a href="partials/desconectar.php" class="iconMenu cadastrar ">Sair</a>
+                <a href="partials/desconectar.php" class="iconMenu ">Sair</a>
             </li>
 
         <?php endif;?>

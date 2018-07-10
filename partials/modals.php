@@ -1,7 +1,7 @@
 <div class="bg-modal"></div>
          <div class="conteiner-modal row">
             <div class="modal-header modal-logar col l6 offset-l3 m8 offset-m2 s10 offset-s1">
-                     <form id="formLogin"  method="POST" action="login.php">
+                     <form id="formLogin"  method="POST" action="./login.php">
                          <div  class="modal">
                           <div class="input-field col s12">
                               <p class="title"> Achados e Perdidos <br> IFG <br></p>
@@ -20,7 +20,7 @@
 
 
                 <div class="modal-header col l6 offset-l3 m8 offset-m2 s10 offset-s1 modal-cadastrar">
-                    <form id="formCadastro" method="POST" action="cadastro.php" style="background-color: #000;">
+                    <form id="formCadastro" method="POST" action="./cadastro.php" style="background-color: #000;">
                          <div  class="modal">
                              <p class="title"> Cadastro de Usuários <br></p>
                               <input type="text" name="nome" class="campo" placeholder="Nome:"><br>
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="modal-header modal-categoria col l6 offset-l3 m8 offset-m2 s10 offset-s1">
-                     <form action="categoria/cadastroCategoria.php" method="POST">
+                     <form action="./categoria/cadastroCategoria.php" method="POST">
                          <div  class="modal">
                              <p class="title">Inserir Categoria</p>
                              <input type="text" name="nome" class="campo" placeholder="Insira o nome da nova categoria"><br>
@@ -47,7 +47,7 @@
 
 
              <div class="modal-header modal-itens col l6 offset-l3 m8 offset-m2 s10 offset-s1">
-                     <form enctype="multipart/form-data"  method="POST" action="cadastroi.php" id="formCadItem" >
+                     <form enctype="multipart/form-data"  method="POST" action="./itens/cadastroi.php" id="formCadItem" >
                              <div class="modal">
                                  <p class="title">Registrar Item Perdido</p>
                                  <input id="nome" type="text" name="nome" class="validate campo" placeholder="Insira o nome do Item">
@@ -73,14 +73,10 @@
                                          <input id="local" type="text" name="local" class="validate campo" placeholder="Local encontrado">
                                          <input id="descricao" type="text" name="descricao" class="validate campo" placeholder="Descrição">
                                          <div class="file-field input-field ">
-
-
                                                     <label for="btn-img" class="botao-img">Selecionar um arquivo </label>
                                                     <input id="btn-img" type="file" name="userfile" placeholder="imagem" class="botao-img">
 
-
-
-                                         </div>""
+                                         </div>
                                          <button class="botao" type="submit" name="cadastro">
                                              Cadatrar Item
                                          </button>
@@ -89,7 +85,7 @@
                   </div>
 
              <div class="modal-header modal-atualizar col l6 offset-l3 m8 offset-m2 s10 offset-s1">
-                     <form id="formCadItem"  enctype="multipart/form-data" method="POST" action="../itens/cadastroi.php">
+                     <form id="formCadItem"  enctype="multipart/form-data" method="POST" action="./itens/cadastroi.php">
                          <div  class="modal">
                              <span class="title"> Atualizar Item </span>
 
@@ -121,9 +117,15 @@
                              <div class="cont-image-update">
 
                              </div>
+                             <div class="file-field input-field ">
 
-                         <input type="file" name="userfile" placeholder="imagem" value="" class="botao-img"><br>
+                                <label for="btn-img" class="botao-img">Selecionar um arquivo </label>
+                                                    
+                                <input type="file" name="userfile" placeholder="imagem" value="" class="btn-img"><br>
 
+                            </div>
+
+                         
                          <input type="hidden" name="id" value="">
 
                          <input type="submit" name="update" value="Altualizar" class="botao">

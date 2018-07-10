@@ -9,6 +9,7 @@
             <?php if(isset($_COOKIE["tipo"]) && $_COOKIE["tipo"] == 1): ?>
                 <div class="card-action edit-delet">
                     <?php echo '<a href="index.php?action=delete&id=' . $row->id.'">Excluir</a>' ?>
+
                     <a href="#" class="botaoAtualizar">Atualizar</a>
                 </div>
 
@@ -37,15 +38,21 @@
                         <p>Descrição: <?php echo $row->descricao ?></p>
                         <p>Data: <?php echo $row->data_encontrado; ?></p>
                     </div>
-                    <div class="container-btn-card">
-                        <?php echo '
-                            <a class="btn-devolver" href="devolvidos/Fdevolvidos.php?action=devolver&id=' . $row->id.'">
-                                Resgatar 
-                            </a>
-                        ' ?>
+                    <?php if (isset($_COOKIE["id"]) && $row->status == 0): ?>
+                   
+                        <div class="container-btn-card">
+                            <?php 
+                            echo '
+                                <a class="btn-devolver" href="devolvidos/Fdevolvidos.php?action=devolver&id=' . $row->id.'">
+                                    Resgatar 
+                                </a>
+                            ' ?>
 
-
-                    </div>
+                        </div>
+                    
+                    <?php endif ?>
+                    
+                   
                     <p class="date"><?php echo $data = $row->data_encontrado; ?></p>
                 </div>
            </div>
