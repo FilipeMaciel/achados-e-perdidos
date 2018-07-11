@@ -4,9 +4,6 @@
 	include "../classes/models/Item.class.php";
 	include_once $_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/classes/Crud.php";
 
-	
-	//$connect = mysqli_connect("localhost","root","","achados") or die("ERROR");
-
 	if (isset($_POST["cadastro"])) {
 		$nome_item=($_POST["nome"]);
 		$nome_pessoa=($_POST["nome_pessoa"]);
@@ -25,11 +22,8 @@
 			header("Location: ../index.php");	
 		}
 
-
-
+		//*****************ATUAILIZAR******************
 		
-
-//*****************ATUAILIZAR******************
 		if (isset($_POST["update"])) {
 			$acao = 0;
 		$nome_item=($_POST["nome"]);
@@ -54,7 +48,7 @@
         $item = new Item();
         $return = $item->update($id,$nome_item,$nome_pessoa,$local,$descricao,$data,$aimage,$status);
 		echo "Atualizado";
-			header("Location: ../index.php");	
+			//header("Location: ../index.php");	
 		
 
 	}

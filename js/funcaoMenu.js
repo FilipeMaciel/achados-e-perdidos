@@ -21,7 +21,7 @@ $(function(){
 
      $('.cadastrar').click(function(event) {
 
-         fundo.show();
+        fundo.show();
      	modalBg.show();	
      	modalCadastrar.show('slow');
      	modalLogar.hide();
