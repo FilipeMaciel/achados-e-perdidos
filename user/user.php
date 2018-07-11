@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/modal.css">
+    <link rel="stylesheet" type="text/css" href="../css/menu.css">
+    <link rel="stylesheet" type="text/css" href="../css/grid.css">
+    <link rel="stylesheet" type="text/css" href="../css/user.css">
 </head>
 
-<table border="1" style="width: 100%">
-	<tr>
-	    <td>id</td>
-	    <td>Nome</td>
-	    <td>Email</td>
-	    <td>Tipo</td>
-	    <td colspan="2">Ações</td>
+
+<body>
+
+<nav  class="menu">
+    <ul>
+        <li>
+            <a href="../index.php" class="iconMenu">Voltar</a>
+        </li>
+    </ul>
+</nav>
+
+        <span class="titulo-secao"> Listagem de Usuários</span>
+
+<table>
+	<tr class="line-color1">
+	    <td class="titulo">Id</td>
+	    <td class="titulo">Nome</td>
+	    <td class="titulo">E-mail</td>
+	    <td class="titulo">Tipo</td>
+	    <td colspan="2" class="titulo">Ações</td>
 	</tr>
 <?php 
 include "../classes/models/Usuario.php";
@@ -19,18 +36,19 @@ include "../classes/models/Usuario.php";
     foreach ($usuario as $row):
 ?>
     		
-    		<tr>
+    		<tr class="line-color2">
     			<td><?php echo $row->id;?></td>
     			<td><?php echo $row->nome;?></td>
     			<td><?php echo $row->email;?></td>
     			<td><?php echo $row->tipo;?></td>
 						
-    			<td ><?php echo '<a href="../user/user.php?action=delete&id=' . $row->id.'">Excluir </a>' ?></td>
-    			<td ><?php echo '<a href="../user/userAtualizacao.php?action=update&id=' . $row->id.'">Atualizar</a> '?></td>
+    			<td class="center"><?php echo '<a href="../user/user.php?action=delete&id=' . $row->id.'">Excluir </a>' ?></td>
+    			<td  class="center"><?php echo '<a href="../user/userAtualizacao.php?action=update&id=' . $row->id.'">Atualizar</a> '?></td>
     			
     		</tr>
     	<?php endforeach;?>
-    	</table>   
+    </table>
+    </body>
 </html>
 <?php
 

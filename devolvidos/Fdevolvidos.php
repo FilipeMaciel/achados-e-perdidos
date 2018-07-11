@@ -10,8 +10,6 @@ include_once $_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/classes/Crud.php";
     <link rel="stylesheet" type="text/css" href="../css/modal.css">
     <link rel="stylesheet" type="text/css" href="../css/menu.css">
     <link rel="stylesheet" type="text/css" href="../css/grid.css">
-    <link rel="stylesheet" type="text/css" href="../css/devolvidos.css">
-    <script type="text/javascript" src="../js/funcaoMenu.js"></script>
 </head>
 
 <?php

@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+table{
+    width: 100%;
+    margin-top: 10px;
+}
+
+table tr .titulo{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+table tr{
+    height: 40px;
+    text-align: center;
+}
+
+.left{
+    text-align: left;
+}
+.center{
+    text-align: center;
+}
+
+.line-color1{
+    background-color: rgba(26,60,64,.8);;
+    color: #ffffff;
+}
+
+.line-color2{
+    background-color: #dcedc2;
+    color: #1A3C40;
+}
+
+a{
+    color: #1A3C40;
+}
+
+a:hover{
+    background-color: #1A3C40;
+    color: #ffffff;
+}
+
+td{
+    position: relative;
+}
+
+.titulo-secao{
+    font-size: 30px;
+    color: #1A3C40;
+    font-weight: bold;
+    text-align: center;
+    font-style: italic;
+    margin: auto auto;
+    display: flex;
+}
+

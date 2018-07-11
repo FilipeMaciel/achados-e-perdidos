@@ -11,7 +11,11 @@
 
         <!-- ESTE MENU SOMENTE SERÁ MOSTRADO PARA USUÁRIOS LOGADOS -->
         <?php if(isset($_COOKIE["id"]) && $_COOKIE["tipo"] == 1): ?>
-
+            
+        <li>
+            <a href="./user/user.php">Usuários</a>
+        </li>
+        
             <li>
                 <a href="#" class="iconMenu categoria"> Categorias </a>
             </li>
