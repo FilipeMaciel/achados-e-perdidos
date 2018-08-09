@@ -24,7 +24,8 @@ header{
 }
 
 .menu{
-	display: block;
+	display: flex;
+	justify-content: space-between;
 	width: 100%;
 	height: 70px;
 	background-color: rgba(26,60,64,.8);
@@ -32,11 +33,16 @@ header{
 	z-index: 1;
 }
 
+nav a{
+	display: block;
+
+}
+
 .menu ul{
+	margin: auto 0;
 	list-style: none;
 	position: relative;
 	height: 100%;
-
 }
 
 .menu ul li{
@@ -47,15 +53,52 @@ header{
 	align-content: center;
 	align-items: center;
 	display: flex;
+	margin: auto auto;
+	position: relative;
 
 
 }
 .menu ul li a{
 	display: flex;
 	text-align: center;
+	width: 100%;
 	color: #ffffff;
 	margin: auto auto;
 	flex-direction: column;
+}
+
+
+
+.menu ul ul{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	bottom: -100%;
+	left: 0;
+	height: 70px;
+}
+nav ul ul li{
+	position: relative;
+	display: none !important;
+
+}
+
+nav ul ul li{
+	position: relative;
+	display: none !important;
+	height: 100%;
+}
+
+
+nav ul li:hover ul li{
+	display: flex !important;
+	background-color: rgba(26,60,64,.8);
+}
+
+.menu ul ul li a{
+	height: 70px;
+	display: flex;
+
 }
 
 .menu label{

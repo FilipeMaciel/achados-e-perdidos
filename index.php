@@ -147,14 +147,16 @@
             </h2>
 
             <h2 class="governo col l2 s4">
-                <p>GOVERNO <br>
-                FEDERAL</p>
+                <a href="http://www.brasil.gov.br/" target="_blank">
+                        <p>GOVERNO <br>
+                        FEDERAL</p>
+                </a>
             </h2>
 
         </div>
     </footer>
 
-    <!-- Copyright © Víctor Gonçalves dos Santos | @victur01
-         Ana Lívia Pereira Silva | @liviaana46 -->
+    <!-- Copyright © Víctor Gonçalves dos Santos |
+         Ana Lívia Pereira Silva | -->
 </body>
 </html>

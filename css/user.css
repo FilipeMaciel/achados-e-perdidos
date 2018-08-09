@@ -3,6 +3,7 @@
 table{
     width: 100%;
     margin-top: 10px;
+    font-size: 12px;
 }
 
 table tr .titulo{
@@ -44,17 +45,27 @@ a:hover{
     color: #ffffff;
 }
 
-td{
-    position: relative;
+
+div .container-titulo{
+    width: 100%;
+    display: flex;
+    margin: auto auto;
 }
 
 .titulo-secao{
-    font-size: 30px;
+    font-size: 20px;
     color: #1A3C40;
     font-weight: bold;
     text-align: center;
     font-style: italic;
-    margin: auto auto;
+    margin: 10px auto;
     display: flex;
+    flex-direction: column;
 }
+
+@media(max-width: 600px){
+    table{
+        font-size: 10px;
+    }
+    }
 
