@@ -54,13 +54,13 @@
         }
 
         //inseri o item
-        public function insert ($nome,$nome_pessoa,$local,$descricao,$imagem,
+    public function insert ($nome,$nome_pessoa,$local,$descricao,$imagem,
         $data,$status,$categoria){
         try {
             $banco = new PDO("mysql:host=localhost;dbname=achados", "root", "");
             
             $banco->beginTransaction();
-
+            var_dump($imagem);
             if (isset($imagem)) {
 
                 $extensao=strtolower(substr($_FILES['userfile']['name'],-4));
@@ -70,6 +70,8 @@
                 move_uploaded_file($_FILES['userfile']['tmp_name'],$diretorio.
                     $novaimagem);
 
+            }else{
+                $novaimagem = __DIR__."/public/images/svg/images-regular.svg";
             }
 
             $prepare=$banco->prepare("INSERT INTO intens(nome_item,nome_pessoa,local_encontrado,descricao,data_encontrado,status,imagem,id_usuarios) VALUES(:nome_item,:nome_pessoa,:localenc,:descricao,:data,:status,:novaimagem,:id)");

@@ -15,15 +15,13 @@
 
         <!-- FIM -->
 
-        <!-- ESTE MENU SOMENTE SERÁ MOSTRADO PARA USUÁRIOS LOGADOS -->
-        <?php if(isset($_COOKIE["id"]) && $_COOKIE["tipo"] == 1): ?>
-
-        <?php endif; ?>
             <?php if(isset($_COOKIE["id"])): ?>
                 <li>
                     <a href="partials/desconectar.php" class="iconMenu ">Sair</a>
                 </li>
             <?php endif;?>
+            <!-- ESTE MENU SOMENTE SERÁ MOSTRADO PARA USUÁRIOS LOGADOS -->
+            <?php if(isset($_COOKIE["id"]) && $_COOKIE["tipo"] == 1): ?>
 
             <li>
                 <a href="#" class="iconMenu categoria"> Categorias </a>
@@ -36,6 +34,7 @@
                     <li> <a href="#" class="cadastrar iconMenu">Cadastrar Usuários</a> </li>
                 </ul>
             </li>
+            <?php endif; ?>
 
 
             
