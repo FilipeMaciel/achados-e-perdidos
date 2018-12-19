@@ -39,7 +39,7 @@
                 <div class="card-action edit-delet">
                     <?php echo '<a class="alertDeletar" href="#" id="' . $row->id.'">Excluir</a>' ?>
 
-                    <a href="#" class="botaoAtualizar">Atualizar</a>
+                  <a href="#" class="botaoAtualizar" id="<?php $row->id?>">Atualizar</a>
                 </div>
 
             <?php endif; ?>
