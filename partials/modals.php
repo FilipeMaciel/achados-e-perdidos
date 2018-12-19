@@ -89,7 +89,7 @@
                          <div  class="modal">
                              <span class="title"> Atualizar Item </span>
 
-                             <input type="text" name="nome" class="campo" value="" placeholder="Nome do Item"><br>
+                             <input type="text" name="nome" class="campo" value="" placeholder="Nome do Item" ><br>
                              <div class="position-select">
                                  <div class="select-style">
                                      <select name="categorias">
