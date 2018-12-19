@@ -3,8 +3,9 @@
 	include("../classes/DB.php");
 	include "../classes/models/Item.class.php";
 	include_once $_SERVER['DOCUMENT_ROOT']."/achados-e-perdidos/classes/Crud.php";
-
+	
 	if (isset($_POST["cadastro"])) {
+	
 		$nome_item=($_POST["nome"]);
 		$nome_pessoa=($_POST["nome_pessoa"]);
 		$local=($_POST["local"]);

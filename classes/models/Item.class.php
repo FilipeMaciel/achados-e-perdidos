@@ -60,8 +60,8 @@
             $banco = new PDO("mysql:host=localhost;dbname=achados", "root", "");
             
             $banco->beginTransaction();
-            var_dump($imagem);
-            if (isset($imagem)) {
+            //var_dump();
+            if ($imagem['size'] > 0) {
 
                 $extensao=strtolower(substr($_FILES['userfile']['name'],-4));
                 $novaimagem=md5(time()). $extensao;
@@ -69,9 +69,11 @@
                 
                 move_uploaded_file($_FILES['userfile']['tmp_name'],$diretorio.
                     $novaimagem);
+                    
 
             }else{
-                $novaimagem = __DIR__."/public/images/svg/images-regular.svg";
+                
+                $novaimagem = "images-regular.svg";
             }
 
             $prepare=$banco->prepare("INSERT INTO intens(nome_item,nome_pessoa,local_encontrado,descricao,data_encontrado,status,imagem,id_usuarios) VALUES(:nome_item,:nome_pessoa,:localenc,:descricao,:data,:status,:novaimagem,:id)");

@@ -74,7 +74,7 @@
                                          <input id="descricao" type="text" name="descricao" class="validate campo col l6 m6 s12" placeholder="Descrição">
                                          <div class="file-field input-field ">
                                                     <label for="btn-img" class="botao-img">Selecionar um arquivo </label>
-                                                    <input id="btn-img" type="file" name="userfile" placeholder="imagem" class="botao-img">
+                                                    <input id="btn-img" type="file" name="userfile" placeholder="imagem" value="" class="botao-img">
 
                                          </div>
                                          <button class="botao" type="submit" name="cadastro">
