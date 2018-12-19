@@ -48,13 +48,13 @@
 
              <div class="modal-header modal-itens col l6 offset-l3 m8 offset-m2 s10 offset-s1">
                      <form enctype="multipart/form-data"  method="POST" action="./itens/cadastroi.php" id="formCadItem" >
-                             <div class="modal">
+                             <div class="modal row">
                                  <p class="title">Registrar Item Perdido</p>
-                                 <input id="nome" type="text" name="nome" class="validate campo" placeholder="Insira o nome do Item">
+                                 <input id="nome" type="text" name="nome" class="validate campo col l6 m6 s12" placeholder="Insira o nome do Item">
 
                                     <div class="position-select">
-                                        <div class="select-style">
-                                            <select name="categorias">
+                                        <div class="select-style col l6 m6 s12">
+                                            <select name="categorias" id="iinput-select">
                                                 <option disabled selected><u> Selecione a categoria </u> </option>
                                                  <?php
                                                  $categorias = Crud::findAllCategoria();
@@ -69,9 +69,9 @@
                                              </select>
                                         </div>
                                      </div>
-                                         <input id="encontrou" type="text" name="nome_pessoa" class="validate campo" placeholder="Quem encontrou?">
-                                         <input id="local" type="text" name="local" class="validate campo" placeholder="Local encontrado">
-                                         <input id="descricao" type="text" name="descricao" class="validate campo" placeholder="Descrição">
+                                         <input id="encontrou" type="text" name="nome_pessoa" class="validate campo col l6 m6 s12" placeholder="Quem encontrou?">
+                                         <input id="local" type="text" name="local" class="validate campo col l6 m6 s12" placeholder="Local encontrado">
+                                         <input id="descricao" type="text" name="descricao" class="validate campo col l6 m6 s12" placeholder="Descrição">
                                          <div class="file-field input-field ">
                                                     <label for="btn-img" class="botao-img">Selecionar um arquivo </label>
                                                     <input id="btn-img" type="file" name="userfile" placeholder="imagem" class="botao-img">

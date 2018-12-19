@@ -22,6 +22,30 @@
 
 <body >
 
+<script>
+    $(document).ready(function(){
+        $(".butao").click(function(){
+            swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                })
+                .then((willDelete) => {
+                if (willDelete) {
+                    swal("Poof! Your imaginary file has been deleted!", {
+                    icon: "success",
+                    });
+                } else {
+                    swal("Your imaginary file is safe!");
+                }
+                });
+        })
+    });
+</script>
+<input type="button" class="butao" onClick="clickado()" value="BUTAO">
+
 <?php
    include "partials/header.php";
 ?>

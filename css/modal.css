@@ -86,12 +86,14 @@ input[type='file'] {
 }
 
 .select-style select{
-	width: 200px;
 	font-size: 15px;
-	background-color: #1A3C40;
+	color: #1A3C40;
 	cursor: pointer;
+	padding: 3px 10px;
+	border-radius: 5px;
 
 }
+
 
 .select-style option{
 	background-color: #D8EDC9;

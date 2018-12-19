@@ -24,6 +24,8 @@
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
     <script type="text/javascript" src="../js/validacaoFormLogin.js"></script>
     <script type="text/javascript" src="../js/validacaoFormCadastroUser.js"></script>
     <script type="text/javascript" src="../js/validacaoFormCadItem.js"></script>
